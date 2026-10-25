@@ -1,0 +1,31 @@
+{
+  "checks": [
+    "Server catalog HTTP 200",
+    "Original catalog hero",
+    "Desktop fits viewport",
+    "HTTP signup saved to database: qa_buyer",
+    "Signed email verification: qa_buyer",
+    "HTTP signup saved to database: qa_seller",
+    "Signed email verification: qa_seller",
+    "Private seller awaits moderation",
+    "Staff approval persisted",
+    "Product and photo persisted, pending moderation",
+    "Unapproved product is hidden",
+    "Staff activates reviewed listing",
+    "Independent buyer sees shared listing",
+    "Server calculated total",
+    "Address persisted",
+    "Unconfigured payment remains blocked",
+    "Wishlist persisted",
+    "Buyer cannot enter administration",
+    "Search uses shared database",
+    "No fabricated search results",
+    "Mobile fits viewport",
+    "No browser script errors"
+  ],
+  "errors": [],
+  "scope": "Local browser + postgresql; no external payment or SMTP calls.",
+  "browser": "151.0.7922.34",
+  "status": "passed",
+  "count": 22
+}
