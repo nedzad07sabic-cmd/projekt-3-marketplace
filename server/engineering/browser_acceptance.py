@@ -1,5 +1,5 @@
 """Browser acceptance against an isolated CI database only; never run on production."""
-import os,sys,json,re
+import os,sys,json,re,tempfile
 from pathlib import Path
 BASE_DIR=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(BASE_DIR/'app'))
@@ -8,17 +8,20 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE','config.settings')
 os.environ['DJANGO_ALLOW_ASYNC_UNSAFE']='true'
 import django;django.setup()
 from django.conf import settings
+from django.db import connection
 assert settings.DEBUG and settings.TESTING, 'This harness is only for isolated testing.'
 assert settings.DATABASES['default']['NAME'].endswith('_ci'), 'Use a disposable *_ci database.'
 from market.models import User,Seller,Product,Outbox,Category
 from PIL import Image,ImageDraw
 from playwright.sync_api import sync_playwright
 BASE='http://127.0.0.1:8000';PASSWORD='Browser-local-only-847!Strong'
-OUT=BASE_DIR/'engineering/browser';OUT.mkdir(exist_ok=True)
-report={'checks':[],'errors':[],'scope':'Local browser + PostgreSQL; no external payment or SMTP calls.'}
+OUT=Path(os.environ.get('BROWSER_ARTIFACT_DIR') or tempfile.mkdtemp(prefix='zadenvo-browser-'))
+OUT.mkdir(parents=True,exist_ok=True)
+report={'checks':[],'errors':[],'scope':f'Local browser + {connection.vendor}; no external payment or SMTP calls.'}
 def checked(name,ok=True):
     if not ok: raise AssertionError(name)
     report['checks'].append(name)
+    print('PASS '+name,flush=True)
 def login(page,username):
     page.goto(BASE+'/account/login/');page.locator('#id_username').fill(username);page.locator('#id_password').fill(PASSWORD);page.get_by_role('button',name='Prijavi se',exact=True).click();page.wait_for_url('**/account/')
 def signup(page,name):
@@ -32,7 +35,7 @@ User.objects.create_user('qa_operator','qa_operator@example.invalid',PASSWORD,is
 img=Image.new('RGB',(720,540),'#e9e4f5');d=ImageDraw.Draw(img);d.rounded_rectangle((100,140,620,360),30,fill='#313147');d.text((210,405),'QA TEST IMAGE - NOT A LIVE OFFER',fill='#313147');img.save('/tmp/marketplace-test-upload.png')
 try:
     with sync_playwright() as pw:
-        b=pw.chromium.launch(headless=True,args=['--disable-dev-shm-usage'])
+        b=pw.chromium.launch(headless=True,executable_path=os.environ.get('BROWSER_EXECUTABLE_PATH') or None,args=['--disable-dev-shm-usage'])
         context=b.new_context(viewport={'width':1440,'height':1000});buyer=context.new_page();buyer.on('pageerror',lambda e:report['errors'].append(str(e)))
         response=buyer.goto(BASE);checked('Server catalog HTTP 200',response.status==200);checked('Original catalog hero',buyer.locator('h1').inner_text().startswith('Pronađi'))
         buyer.screenshot(path=str(OUT/'home.png'),full_page=True)

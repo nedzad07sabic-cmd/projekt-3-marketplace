@@ -2,7 +2,29 @@
 
 Datum provjere: **25.10.2026.**
 
-## Potvrđeni rezultat
+## Najnoviji potvrđeni status
+
+Nakon prvobitne SQLite provjere, 25.10.2026. završene su i provjere na stvarnom
+lokalnom PostgreSQL-u te kroz Chromium preglednik:
+
+| Provjera | Najnoviji rezultat |
+|---|---|
+| PostgreSQL 17.9 — čista instalacija | Migracije, sistemska provjera i provjere usklađenosti migracija uspješne. |
+| Postojeći serverski testovi na PostgreSQL-u | **78/78 prošlo, 0 preskočenih, 0 grešaka**, uključujući konkurentnu kupovinu posljednjeg komada. |
+| Chromium 151.0.7922.34 + zasebna PostgreSQL baza | **22/22 provjere prošle**, bez zabilježenih JavaScript grešaka. |
+
+Detalje navode [PostgreSQL zapis](ZADENVO_POSTGRES_VALIDATION.md) i
+[zapis provjere u pregledniku](ZADENVO_BROWSER_VALIDATION.md). Preglednik je provjerio
+registraciju i testni potpisani link potvrde e-maila, moderaciju prodavača i oglasa,
+dodavanje fotografije, prikaz zajedničkog kataloga nezavisnom kupcu, izračun cijene,
+adresu, sačuvane artikle, pretragu, zaštitu administracije i mobilni prikaz.
+Nepodešena naplata ostala je blokirana. Stvarni SMTP i Stripe/Connect tokovi nisu
+izvršeni.
+
+Sljedeći odjeljci čuvaju historijski tok prvih SQLite provjera; njihove tadašnje
+blokade za PostgreSQL i preglednik razriješene su navedenim naknadnim provjerama.
+
+## Historijski rezultat — prva SQLite provjera
 
 Oporavljeni Django paket instaliran je u novo, izdvojeno Python okruženje.
 Generisana je nedostajuća početna migracija `app/market/migrations/0001_initial.py`,
@@ -12,9 +34,11 @@ i usklađenosti modela s migracijama završile su uspješno.
 Postojeći testni paket pronašao je **78 testova: 77 uspješnih, 1 preskočen,
 0 neuspješnih i 0 grešaka**. Preskočena je provjera zaključavanja posljednjeg
 artikla pri istovremenoj kupovini jer ona zahtijeva PostgreSQL.
-Ovo nije ponovno izvršavanje ranije spominjanih 78 PostgreSQL testova.
+Ta prva SQLite runda nije predstavljala ponovno izvršavanje ranije spominjanih
+78 PostgreSQL testova. Naknadno izvršavanje na PostgreSQL-u dokumentovano je iznad
+i u zasebnom PostgreSQL zapisu.
 
-## Okruženje i zavisnosti
+## Okruženje i zavisnosti prve SQLite provjere
 
 - Python: `3.12.14`.
 - Izdvojeno okruženje: `/workspace/scratch/ccb17751d7f9/zadenvo-venv`.
@@ -23,13 +47,14 @@ Ovo nije ponovno izvršavanje ranije spominjanih 78 PostgreSQL testova.
 - Početni pokušaj bez mrežnog pristupa nije pronašao pakete. Ponovljena instalacija
   s omogućenim pristupom službenom PyPI indeksu uspjela je.
 - `python -m pip check`: `No broken requirements found.`
-- Nisu instalirani globalni Python paketi, sistemski servisi ni nova baza podataka.
+- U toj rundi nisu instalirani globalni Python paketi, sistemski servisi ni PostgreSQL.
 
-Nisu pronađeni `psql`, `pg_isready`, `postgres`, `initdb`, Docker ili Podman.
+Na početku nisu pronađeni `psql`, `pg_isready`, `postgres`, `initdb`, Docker ili Podman.
 Nisu bile postavljene varijable veze `DATABASE_URL`, `PGHOST`, `PGDATABASE` ili
-`PGUSER`. Zato PostgreSQL provjera u ovom okruženju nije izvršena.
+`PGUSER`. Zato PostgreSQL provjera nije izvršena u toj prvoj rundi. Naknadno je
+omogućen izolirani PostgreSQL runtime iz službenih paketa, bez sistemske instalacije.
 
-## Izvršeni koraci
+## Izvršeni koraci prve SQLite provjere
 
 Komande su pokrenute iz direktorija `server/`, koristeći Python iz navedenog
 izdvojenog okruženja:
@@ -95,21 +120,25 @@ odgovore procesora. Ova provjera ne potvrđuje stvarnu Stripe Checkout naplatu,
 Connect onboarding, bankovne transfere ili povrate. Nisu poslane stvarne transakcije
 ni poruke kupcima.
 
-## Preostala ograničenja
+## Trenutno preostala ograničenja
 
-- PostgreSQL i test konkurentne kupovine nisu provjereni u ovoj rundi.
-- Završni `collectstatic` je izvršen nakon brendiranja: 135 datoteka je kopirano i 405 obrada završeno. Prisustvo CSS-a, favicon-a i tri SVG znaka potvrđeno je u manifestu. Posluživanje u stvarnom pregledniku nije provjereno.
-- Nije izveden pregled u stvarnom pregledniku niti test javnog hostinga, TLS-a,
-  SMTP-a, sigurnosnog kopiranja ili obnove baze.
-- Nisu potvrđeni registracija domene, prava na brend, uslovi prodaje ili konfiguracija
-  stvarnog procesorskog računa.
+- Nisu potvrđeni Docker image i Compose instalacija, javni hosting/TLS, stvarni SMTP,
+  sigurnosne kopije ili obnova baze.
+- Nisu potvrđeni registracija domene, potpuna prava na brend, uslovi prodaje ili
+  vanjski testni tokovi stvarnog Stripe/Connect računa.
+- DPMA upit za tačan naziv `ZADENVO` vratio je 0 rezultata 25.10.2026.;
+  [zapis upita](../../engineering/brand/zadenvo.dpma-check-2026-10-25.json) nije
+  potpuna provjera sličnih naziva, neregistrovanih ranijih prava ili nezavisnih EUIPO/WIPO
+  evidencija.
 - Ovaj rezultat potvrđuje lokalnu serversku instalaciju i navedene testove; ne znači
   da je marketplace javno objavljen ili spreman za stvarne kupce.
 
-## Završna provjera nakon brendiranja
+## Historijska SQLite provjera nakon brendiranja
 
 Nakon primjene naziva, administracijskih oznaka i SVG/CSS identiteta ponovo je izvršen cijeli postojeći paket: **78 testova, 77 uspješnih, 1 očekivano preskočen, bez grešaka** (2,850 sekundi). `check` i provjera migracija ostali su uredni.
 
 Na još jednoj novoj privremenoj SQLite bazi, Django klijent potvrdio je HTTP 200 i naziv Zadenvo (uključujući uppercase prikaz) na početnoj stranici, prijavi kupca i administratorskoj prijavi. Katalog je ostao prazan, a naplata isključena. Provjereno je svih pet ključnih CSS/SVG stavki u statičkom manifestu. Privremena baza je uklonjena.
 
-Vektorski natpis je renderovan i vizuelno pregledan. Pun pregled stranica u pregledniku nije izvršen: Chromium izvršna datoteka nije dostupna u ovom okruženju. Ove serverske provjere ne zamjenjuju browser E2E ili PostgreSQL konkurentne testove.
+Završni `collectstatic` je tada izvršen: 135 datoteka je kopirano i 405 obrada završeno. Prisustvo CSS-a, favicon-a i tri SVG znaka potvrđeno je u manifestu.
+
+Vektorski natpis je renderovan i vizuelno pregledan. U toj rundi pregled stranica u pregledniku nije izvršen jer Chromium još nije bio dostupan. Naknadno je pokrenut Chromium 151.0.7922.34 i uspješno završene 22 provjere iz odvojenog browser zapisa. PostgreSQL konkurentni test također je naknadno izvršen i prošao; prva serverska provjera nije korištena kao zamjena za te rezultate.
