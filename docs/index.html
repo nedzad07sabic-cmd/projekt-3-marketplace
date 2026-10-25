@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="bs"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-Pa8kMNaWaiMswOlzJ3iUG0nifNJ5eGfZdrkLJIOL4FY=' 'sha256-FGVR8Ft1iBZGtBwq+kRAxhz16i4MiasCwBT4KhFwlNw='; style-src 'unsafe-inline'; img-src data:; connect-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="Razvojni pregled marketplacea — isključivo izmišljeni artikli i simulacije, bez stvarnih kupovina.">
+<title>Projekt 3 — Marketplace | Testna stranica</title><style>
+:root{--ink:#15283e;--muted:#596d80;--line:#dce5ec;--brand:#116c63;--light:#eff7f5;--bg:#f3f6f9;--warn:#fff4d9;--red:#a52e32}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;line-height:1.5}button,input,select{font:inherit}button{cursor:pointer;border:1px solid var(--line);border-radius:9px;background:white;color:var(--ink);padding:9px 13px;font-weight:650}button:hover{border-color:var(--brand)}button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #9bc9ee;outline-offset:2px}button:disabled{opacity:.45;cursor:not-allowed}.primary{background:var(--brand);color:white;border-color:var(--brand)}.danger{color:var(--red)}.banner{background:#172a3d;color:#fff;text-align:center;padding:10px 15px;font-size:13px}.top{display:flex;gap:15px;justify-content:space-between;align-items:center;padding:21px 5%;background:white;border-bottom:1px solid var(--line)}.brand{font-size:24px;font-weight:800;letter-spacing:-1px}.brand small{font-size:11px;letter-spacing:1.7px;display:block;font-weight:600;color:var(--muted)}.badge{border:1px solid #b8d9d2;background:var(--light);color:#285f59;border-radius:20px;padding:4px 10px;display:inline-block;font-size:12px}.nav{display:flex;gap:7px;overflow-x:auto;padding:14px 5%;background:white;position:sticky;top:0;z-index:5;border-bottom:1px solid var(--line)}.nav button{white-space:nowrap}.nav button.active{background:var(--ink);color:white;border-color:var(--ink)}main{max-width:1260px;margin:auto;padding:26px 24px 45px}.hero{display:flex;justify-content:space-between;gap:20px;background:var(--light);border:1px solid #cee4de;border-radius:16px;padding:26px;margin-bottom:22px}.hero h1{font-size:30px;line-height:1.2;margin:5px 0 12px;max-width:750px}.hero p{margin:0;max-width:820px}.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:1.8px;color:var(--brand);font-weight:750}.muted{color:var(--muted)}.small{font-size:13px}.toolbar{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0 22px}.toolbar input{flex:1;min-width:200px}input,select{background:white;border:1px solid #bccbd7;border-radius:8px;min-height:42px;padding:9px 11px;color:var(--ink);width:100%}.toolbar select{width:auto;max-width:100%}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}.card,.panel{background:white;border:1px solid var(--line);border-radius:13px;overflow:hidden}.panel{padding:22px;margin-bottom:19px}.product-art{height:126px;display:flex;align-items:center;justify-content:center;background:linear-gradient(120deg,#e6edf5,#f1f7f4);font-size:57px;color:#3c6a82;position:relative}.product-art .badge{position:absolute;right:12px;top:12px;background:white}.card-content{padding:17px}.card h3{font-size:17px;margin:0 0 8px}.row{display:flex;gap:12px;justify-content:space-between;align-items:center}.wrap{flex-wrap:wrap}.price{font-size:24px;font-weight:760;margin:12px 0 0}.product-button{margin-top:15px;width:100%}h2{margin:0 0 13px;font-size:23px}h3{margin:0 0 10px;font-size:18px}p{margin:8px 0 15px}.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}.fields{display:grid;grid-template-columns:1fr 1fr;gap:15px}.field{display:block}.field span{font-size:13px;display:block;margin-bottom:5px;font-weight:600}.field.full{grid-column:1/-1}.note{background:var(--warn);border:1px solid #ead7a8;border-radius:10px;padding:13px 15px;margin:13px 0;font-size:13px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-bottom:20px}.stat{background:white;border:1px solid var(--line);border-radius:12px;padding:18px}.stat strong{font-size:27px;display:block}.empty{padding:35px;text-align:center;border:1px dashed #becbd5;border-radius:12px;background:white}.order{border:1px solid var(--line);border-radius:11px;padding:17px;margin:15px 0}.order h3{font-size:15px;overflow-wrap:anywhere}.actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}.actions button{font-size:12px}.tablewrap{overflow:auto}table{border-collapse:collapse;width:100%;font-size:14px}td,th{padding:11px 9px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{font-size:12px;color:var(--muted);background:#f8fafc}td:last-child.num,th.num{text-align:right}.totals{display:grid;grid-template-columns:1fr auto;gap:9px;padding:15px 0}.big{font-size:25px;font-weight:800}.positive{color:var(--brand)}.negative{color:var(--red)}.pill{display:inline-block;border-radius:20px;background:#edf1f5;font-size:12px;padding:4px 9px}.audit{font-size:12px;max-height:320px;overflow:auto}.audit p{border-bottom:1px solid var(--line);padding:10px 0;margin:0;overflow-wrap:anywhere}footer{max-width:1260px;margin:0 auto;padding:0 24px 25px;font-size:12px;color:var(--muted)}#toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--ink);color:white;padding:13px 20px;border-radius:12px;z-index:30;max-width:90%;box-shadow:0 8px 30px #0002}#toast[hidden]{display:none}details{border:1px solid var(--line);border-radius:9px;padding:12px;margin:10px 0}summary{cursor:pointer;font-weight:650}.step{padding:13px 0;border-bottom:1px solid var(--line)}.step strong{display:block}.tag{font-size:11px;letter-spacing:1px}.compact{margin:4px 0}.split{display:grid;grid-template-columns:1.35fr 1fr;gap:22px}a{color:var(--brand)}@media(max-width:860px){.grid{grid-template-columns:repeat(2,1fr)}.two,.split{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.hero h1{font-size:26px}}@media(max-width:540px){main{padding:18px 14px}.top{padding:17px}.brand{font-size:21px}.grid{grid-template-columns:1fr}.fields{grid-template-columns:1fr}.hero{padding:19px}.stats{grid-template-columns:1fr}.row{align-items:flex-start}.toolbar select{width:100%}.top>.badge{display:none}.panel{padding:17px}}
+
+/* v0.2 additions */
+textarea{font:inherit;color:var(--ink);width:100%;border:1px solid #bccbd7;border-radius:8px;padding:10px;resize:vertical;background:white}textarea:focus-visible{outline:3px solid #9bc9ee;outline-offset:2px}.prewrap{white-space:pre-wrap;overflow-wrap:anywhere}.hero{background:linear-gradient(130deg,#edf8f4,#eaf1fa);padding:30px}.hero h1{max-width:820px;font-size:34px}.brand .version{font-size:12px;vertical-align:middle;letter-spacing:0;background:#e7f2ee;padding:4px 8px;border-radius:8px}.nav{z-index:5}.toolbar{align-items:flex-end;gap:12px}.toolbar .field{flex:1;min-width:170px}.toolbar .field select{width:100%;min-width:0}.toolbar .search-field{flex:1.5;min-width:230px}.toolbar .search-field input{width:100%}.product-actions{display:flex;gap:8px;margin-top:15px}.product-actions .primary{flex:1}.card{box-shadow:0 3px 12px #10213205}.card-content h3{min-height:48px}.product-art{height:146px}.badge.caution,.caution{background:#fff1da;color:#7c4a0a;border-color:#e1c99b}.note.alert{border-color:#e5b8a3;background:#fff0e6}.order{background:white;border-left:4px solid #568a83;padding:20px;margin-bottom:20px}.order h3{font-size:14px;margin:0}.order .totals{font-size:14px}.order .actions{align-items:center}.qty{padding:6px}.ledger{background:#f2f6fa;border:1px solid #dbe4ed;padding:15px;border-radius:10px;margin:12px 0}.ledger p{margin:5px 0}.ledger .big{font-size:23px}.message{padding:12px;background:#f7f9fb;border-radius:8px;margin:8px 0}.message p{margin:5px 0}.itemrow{padding:12px 0;border-bottom:1px solid var(--line)}.itemrow p{margin:0;max-width:65%;overflow-wrap:anywhere}.field{min-width:0}form .primary,form>button{margin-top:14px}.detail-art{font-size:70px;text-align:center;padding:12px;background:#edf4f7;border-radius:10px}dialog{max-width:640px;width:calc(100% - 28px);max-height:88vh;border:1px solid #c8d6df;border-radius:15px;padding:24px;color:var(--ink);overflow:auto;box-shadow:0 15px 70px #0004}dialog::backdrop{background:#10213288}dialog .field{margin:14px 0}dialog h2{font-size:21px;max-width:75%;margin:0}.statusrow{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.top{gap:12px}.tablewrap{max-width:100%}.totals strong{text-align:right;overflow-wrap:anywhere}.totals span{overflow-wrap:anywhere}#backup-file{max-width:100%;font-size:13px}#storage{font-size:11px}.actions button{min-height:36px}.field span{line-height:1.4}.list-note{margin-top:18px}.versiontext{font-size:11px;color:#6f8292}a:focus-visible,summary:focus-visible{outline:3px solid #9bc9ee;outline-offset:2px}button{touch-action:manipulation}main:empty::after{content:'Učitavanje lokalnog demoa…'}.noscript{padding:25px;background:#fff3dd}.small{overflow-wrap:anywhere}@media(max-width:540px){.hero h1{font-size:27px}.hero{padding:20px}.top{flex-wrap:wrap}.top .statusrow{width:100%;justify-content:space-between}.toolbar .field{min-width:100%;flex:1}.product-art{height:135px}.card-content h3{min-height:0}.order{padding:15px}.totals{grid-template-columns:minmax(0,1fr) auto;gap:7px}.order .row{gap:8px}.itemrow p{max-width:100%}.ledger .big{font-size:21px}.order .actions{gap:6px}.order .actions button{max-width:100%;text-align:left}.two{gap:0}.statusrow .badge{font-size:10px}dialog{padding:18px}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+</style></head>
+<body><div class="banner"><strong>TESTNA STRANICA</strong> · Izmišljeni artikli. Nema stvarnih kupovina, prijave ni naplate.</div>
+<header class="top"><div class="brand">Projekt 3 <span class="version">0.2</span><small>MARKETPLACE · RADNI NAZIV</small></div><div class="statusrow"><span id="storage" class="badge">Lokalno čuvanje</span><button id="reset" class="danger" type="button">Resetuj demo</button></div></header>
+<nav class="nav" aria-label="Demo prikazi"><button data-tab="shop" class="active">Katalog</button><button data-tab="cart">Korpa <span id="cartcount">0</span></button><button data-tab="orders">Narudžbe</button><button data-tab="seller">Prodavač</button><button data-tab="admin">Administracija</button><button data-tab="calc">Računica</button><button data-tab="data">Podaci / pomoć</button></nav>
+<noscript><p class="noscript">Za prikaz prototipa uključi JavaScript u pregledniku. Nije potrebna instalacija. Nema stvarne prodaje, uplate ni registracije.</p></noscript>
+<main id="content"></main><footer>Verzija 0.2 · GitHub web-pregled · 25.10.2026. · Ne unosi stvarne lične podatke, lozinke, kartice ili dokumente. Promjena uloge nije prijava. Samostalna demonstracija — nije WordPress/Dokan instalacija. TimeIQ i B2B projekt ostaju odvojeni. Testni podaci ostaju u ovom pregledniku; nisu zajednički svim posjetiocima. <a href="https://github.com/nedzad07sabic-cmd/projekt-3-marketplace" target="_blank" rel="noopener noreferrer">Projekt na GitHubu</a>.</footer>
+<dialog id="dialog" aria-label="Demo radnja"></dialog><div id="toast" role="status" aria-live="polite" hidden></div>
+<script>/* Project 3 v0.2 — LOCAL SIMULATION ONLY. No real authentication, payments or legal accounting.
+   Amounts are integer cents. UI commits clone/validate state; functions never call a network.
+   Post-payout recovery is an explicitly simulated receivable, NOT an automatic bank reversal. */
+(function(root){
+'use strict';
+const VERSION=2, LIMIT=100000000, MAX_ITEMS=200, MAX_ORDERS=300;
+const CATS=['Elektronika i gaming','Dom i bašta','Moda','Sport i hobi','Knjige i mediji','Ostalo'];
+const KINDS=['Firma','Privatna osoba'];
+const STAGES=['CEKA_UPLATU','UPLACENO','POSLANO','DOSTAVLJENO','OTKAZANO','ISTEKLO'];
+const REASONS=['Paket nije stigao','Artikl je oštećen','Pogrešan artikl','Zahtjev za povrat','Drugi problem'];
+function check(ok,msg){if(!ok)throw Error(msg);}
+function integer(x,min=0,max=LIMIT){return Number.isSafeInteger(x)&&x>=min&&x<=max;}
+function text(v,min=0,max=100){return typeof v==='string'&&v.trim().length>=min&&v.length<=max;}
+function cents(v,allowZero=false){
+ const t=String(v).trim().replace(',','.');check(/^\d{1,7}(\.\d{1,2})?$/.test(t),'Iznos: najviše dvije decimale, bez minusa.');
+ const [a,b='']=t.split('.'), n=Number(a)*100+Number(b.padEnd(2,'0'));
+ check(integer(n,allowZero?0:1),'Iznos je izvan demo raspona.');return n;
+}
+function basisPoints(v){const t=String(v).trim().replace(',','.');check(/^\d{1,2}(\.\d{1,2})?$/.test(t),'Provizija: 0–30%, najviše dvije decimale.');const n=Math.round(Number(t)*100);check(integer(n,0,3000),'Provizija: 0–30%.');return n;}
+function money(c){return new Intl.NumberFormat('de-DE',{style:'currency',currency:'EUR'}).format(c/100);}
+function fee(amount,bps){check(integer(amount)&&integer(bps,0,3000),'Nevažeći obračun.');return Math.round(amount*bps/10000);}
+function uid(prefix){return prefix+'-'+Date.now().toString(36)+'-'+Math.random().toString(36).slice(2,10);}
+function clone(x){return JSON.parse(JSON.stringify(x));}
+function now(){return Date.now();}
+function log(s,action,detail){s.audit.unshift({at:now(),action:String(action).slice(0,100),detail:String(detail).slice(0,500)});s.audit=s.audit.slice(0,300);}
+function seller(s,id){const x=s.sellers.find(x=>x.id===id);check(x,'Prodavač nije pronađen.');return x;}
+function item(s,id){const x=s.products.find(x=>x.id===id);check(x,'Artikl nije pronađen.');return x;}
+function order(s,id){const x=s.orders.find(x=>x.id===id);check(x,'Narudžba nije pronađena.');return x;}
+function initial(){
+ const products=[
+ ['p1','Mehanička tastatura — demo','firma',CATS[0],'Novo',7500,5,'⌨'],
+ ['p2','Stolni organizator — demo','firma',CATS[1],'Novo',2500,4,'▦'],
+ ['p3','Sportska torba — demo','firma',CATS[3],'Novo',3500,3,'◇'],
+ ['p4','Kolekcija knjiga — demo','privatno',CATS[4],'Polovno',2000,1,'▤'],
+ ['p5','Jakna — demo','privatno',CATS[2],'Polovno',4500,1,'♧'],
+ ['p6','Stolna dekoracija — demo','privatno',CATS[5],'Polovno',1500,1,'◈']
+ ].map(([id,title,sellerId,category,condition,price,stock,icon])=>({id,title,sellerId,category,condition,price,stock,icon,shipping:500,description:'Izmišljeni artikl za testiranje prodaje. Nije stvarna ponuda i ne može se naručiti za novac.',approved:true,paused:false}));
+ return {schema:VERSION,revision:0,sellers:[{id:'firma',name:'Demo trgovina — izmišljena firma',kind:KINDS[0],ready:true},{id:'privatno',name:'Demo privatni prodavač',kind:KINDS[1],ready:true}],products,cart:[],orders:[],events:[],audit:[],rateBps:1000};
+}
+function reserved(s,id,t=now()){
+ return s.orders.filter(o=>o.status==='CEKA_UPLATU'&&o.expiresAt>t).reduce((sum,o)=>sum+o.lines.filter(l=>l.productId===id).reduce((a,l)=>a+l.qty,0),0);
+}
+function available(s,id,t=now()){return Math.max(0,item(s,id).stock-reserved(s,id,t));}
+function addCart(s,id,t=now()){
+ const p=item(s,id);check(p.approved&&!p.paused,'Oglas nije aktivan.');check(seller(s,p.sellerId).ready,'Prodavač nije spreman za demo prodaju.');
+ if(s.cart.length)check(item(s,s.cart[0].productId).sellerId===p.sellerId,'Jedna korpa = jedan prodavač. Završi ili isprazni trenutnu korpu.');
+ const line=s.cart.find(l=>l.productId===id);check(available(s,id,t)>(line?line.qty:0),'Nema slobodnih komada; neki mogu biti rezervisani.');
+ if(line)line.qty++;else s.cart.push({productId:id,qty:1});
+}
+function removeCart(s,id){s.cart=s.cart.filter(l=>l.productId!==id);}
+function changeQty(s,id,qty,t=now()){
+ check(integer(qty,0,1000),'Količina mora biti cijeli broj.');const l=s.cart.find(l=>l.productId===id);check(l,'Nema artikla u korpi.');
+ if(qty===0){removeCart(s,id);return;}check(qty<=available(s,id,t),'Nema dovoljno slobodne zalihe.');l.qty=qty;
+}
+function cartTotal(s){let goods=0,shipping=0;for(const l of s.cart){const p=item(s,l.productId);goods+=p.price*l.qty;shipping=Math.max(shipping,p.shipping);}check(integer(goods+shipping),'Prevelika demo narudžba.');return {goods,shipping,gross:goods+shipping};}
+function checkout(s,t=now()){
+ check(s.orders.length<MAX_ORDERS,'Demo podržava najviše 300 narudžbi. Sačuvaj kopiju pa resetuj.');check(s.cart.length,'Korpa je prazna.');
+ const sid=item(s,s.cart[0].productId).sellerId,se=seller(s,sid);check(se.ready,'Prodavač nije spreman.');
+ const lines=s.cart.map(l=>{const p=item(s,l.productId);check(p.sellerId===sid&&p.approved&&!p.paused,'Oglas nije dostupan.');check(integer(l.qty,1,1000)&&l.qty<=available(s,p.id,t),'Nema slobodne zalihe.');return {productId:p.id,title:p.title,unit:p.price,qty:l.qty};});
+ const total=cartTotal(s);const o={id:uid('DEMO'),sellerId:sid,sellerName:se.name,sellerKind:se.kind,lines,...total,rateBps:s.rateBps,status:'CEKA_UPLATU',createdAt:t,expiresAt:t+15*60*1000,paidAt:null,shippedAt:null,deliveredAt:null,payoutAt:null,payout:0,refunded:0,recovered:0,stockRestored:false,tracking:'',issue:null,messages:[]};
+ s.orders.unshift(o);s.cart=[];log(s,'Rezervisano 15 minuta — bez naplate',o.id);return o;
+}
+function cancel(s,id){const o=order(s,id);check(o.status==='CEKA_UPLATU','Otkazivanje bez povrata moguće je samo prije uplate.');o.status='OTKAZANO';log(s,'Otkazana neplaćena narudžba',id);}
+function expire(s,id,t=now()){const o=order(s,id);check(o.status==='CEKA_UPLATU'&&t>=o.expiresAt,'Rezervacija još nije istekla.');o.status='ISTEKLO';log(s,'Istek rezervacije',id);}
+function eventSeen(s,id,type,orderId,amount){
+ check(text(id,1,100),'Nedostaje oznaka događaja.');const old=s.events.find(e=>e.id===id);
+ if(!old)return false;
+ check(old.type===type&&old.orderId===orderId&&old.amount===amount,'Oznaka događaja je već korištena za drugu radnju ili iznos.');return true;
+}
+function record(s,id,type,orderId,amount){check(s.events.length<3000,'Dostignut demo limit događaja.');s.events.push({id,type,orderId,amount});}
+function pay(s,id,eventId,success=true,t=now()){
+ const o=order(s,id),type=success?'PAY':'FAIL';if(eventSeen(s,eventId,type,id,o.gross))return false;
+ check(o.status==='CEKA_UPLATU'&&!o.paidAt,'Narudžba više ne čeka uplatu.');check(t<o.expiresAt,'Rezervacija je istekla. Kreiraj novu narudžbu.');
+ if(!success){record(s,eventId,type,id,o.gross);log(s,'Odbijena demo uplata',id);return false;}
+ check(seller(s,o.sellerId).ready,'Prodavač nije spreman.');
+ for(const l of o.lines){const p=item(s,l.productId);check(p.approved&&!p.paused&&p.stock>=l.qty,'Artikl nije dostupan. Nije simulirana uplata.');}
+ check(s.events.length<3000,'Dostignut demo limit događaja.');
+ for(const l of o.lines)item(s,l.productId).stock-=l.qty;
+ o.status='UPLACENO';o.paidAt=t;record(s,eventId,type,id,o.gross);log(s,'Uplata SIMULIRANA',id);return true;
+}
+function ship(s,id,tracking='DEMO-POSILJKA',t=now()){
+ const o=order(s,id);check(o.status==='UPLACENO'&&o.refunded<o.gross,'Nema plaćene narudžbe za slanje.');check(!o.issue||!o.issue.open,'Otvoren problem: prvo riješi predmet.');check(text(tracking,3,80),'Unesi demo oznaku pošiljke (3–80 znakova).');o.tracking=tracking.trim();o.status='POSLANO';o.shippedAt=t;log(s,'Slanje SIMULIRANO',id);
+}
+function deliver(s,id,t=now()){const o=order(s,id);check(o.status==='POSLANO','Prvo evidentiraj slanje.');o.status='DOSTAVLJENO';o.deliveredAt=t;log(s,'Dostava SIMULIRANA',id);}
+function dispute(s,id,reason='Drugi problem',detail='Demo zahtjev'){
+ const o=order(s,id);check(o.paidAt!==null&&o.refunded<o.gross,'Problem otvori nakon uplate, prije punog povrata.');check(!o.issue||!o.issue.open,'Predmet je već otvoren.');check(REASONS.includes(reason)&&text(detail,3,1000),'Odaberi razlog i unesi 3–1000 znakova.');
+ o.issue={open:true,reason,detail:detail.trim(),openedAt:now(),closedAt:null,resolution:''};log(s,'Otvoren lokalni predmet',id);
+}
+function resolve(s,id,resolution='Predmet pregledan u demonstraciji.'){
+ const o=order(s,id);check(o.issue&&o.issue.open,'Nema otvorenog predmeta.');check(text(resolution,3,500),'Unesi razlog zatvaranja.');o.issue.open=false;o.issue.closedAt=now();o.issue.resolution=resolution.trim();log(s,'Zatvoren lokalni predmet',id);
+}
+function financials(o){
+ const paid=o.paidAt!==null,remaining=paid?o.gross-o.refunded:0;
+ const commission=fee(remaining,o.rateBps),entitlement=remaining-commission,netToSeller=o.payout-o.recovered;
+ const receivable=Math.max(0,netToSeller-entitlement),due=Math.max(0,entitlement-netToSeller);
+ const cash=(paid?o.gross:0)-o.refunded-o.payout+o.recovered;
+ return {remaining,commission,entitlement,netToSeller,receivable,due,cash,sellerAmount:entitlement};
+}
+function payout(s,id,eventId=uid('payout'),t=now()){
+ const o=order(s,id);if(eventSeen(s,eventId,'PAYOUT',id,o.payoutAt===null?financials(o).due:o.payout))return false;
+ check(o.status==='DOSTAVLJENO'&&o.paidAt!==null,'Demo isplata tek nakon dostave.');check(o.payoutAt===null,'Isplata je već evidentirana.');check(!o.issue||!o.issue.open,'Otvoren predmet blokira isplatu.');check(seller(s,o.sellerId).ready,'Prodavač nije spreman za isplatu.');const amount=financials(o).due;check(amount>0,'Nema iznosa za isplatu.');check(s.events.length<3000,'Dostignut demo limit događaja.');
+ o.payout=amount;o.payoutAt=t;record(s,eventId,'PAYOUT',id,amount);log(s,'Isplata SIMULIRANA',id+' / '+money(amount));return amount;
+}
+function restoreStock(s,o){for(const l of o.lines)check(item(s,l.productId).stock+l.qty<=100000,'Prevelika demo zaliha.');for(const l of o.lines)item(s,l.productId).stock+=l.qty;o.stockRestored=true;}
+function refund(s,id,amount,eventId){
+ const o=order(s,id);if(eventSeen(s,eventId,'REFUND',id,amount))return false;
+ check(o.paidAt!==null,'Nema uplate za povrat.');check(integer(amount,1)&&amount<=o.gross-o.refunded,'Povrat je veći od preostale uplate ili nevažeći.');check(s.events.length<3000,'Dostignut demo limit događaja.');
+ if(o.refunded+amount===o.gross&&!o.shippedAt&&!o.stockRestored)restoreStock(s,o);
+ o.refunded+=amount;record(s,eventId,'REFUND',id,amount);log(s,o.payoutAt!==null?'Povrat POSLIJE isplate — simulacija':'Povrat PRIJE isplate — simulacija',id+' / '+money(amount));return true;
+}
+function recover(s,id,amount,eventId){
+ const o=order(s,id);if(eventSeen(s,eventId,'RECOVERY',id,amount))return false;
+ check(o.payoutAt!==null&&integer(amount,1)&&amount<=financials(o).receivable,'Iznos prelazi demo potraživanje od prodavača.');check(s.events.length<3000,'Dostignut demo limit događaja.');
+ o.recovered+=amount;record(s,eventId,'RECOVERY',id,amount);log(s,'Povrat sredstava od prodavača SIMULIRAN',id+' / '+money(amount));return true;
+}
+function restockReturn(s,id){const o=order(s,id);check(o.shippedAt!==null&&o.refunded===o.gross&&!o.stockRestored,'Potvrda zalihe samo nakon punog povrata, jednom za primljenu robu.');restoreStock(s,o);log(s,'Prijem svih vraćenih artikala SIMULIRAN',id);}
+function message(s,id,role,value){const o=order(s,id);check(['Kupac','Prodavač','Administracija'].includes(role),'Nepoznata demo uloga.');check(text(value,1,1000),'Poruka: 1–1000 znakova.');check(o.messages.length<100,'Demo limit: 100 poruka po narudžbi.');o.messages.push({id:uid('msg'),role,text:value.trim(),at:now()});log(s,'Lokalna poruka — nije poslana',id+' / '+role);}
+function addSeller(s,name,kind){check(s.sellers.length<50,'Demo limit: 50 prodavača.');check(text(name,3,80)&&KINDS.includes(kind),'Unesi demo naziv i vrstu prodavača.');const se={id:uid('seller'),name:name.trim(),kind,ready:false};s.sellers.push(se);log(s,'Novi demo prodavač čeka provjeru',se.name);return se;}
+function setReady(s,id,ready){check(typeof ready==='boolean','Nevažeći status.');seller(s,id).ready=ready;log(s,'Simulirana provjera prodavača',id+' / '+ready);}
+function productData(data){
+ check(text(data.title,3,100)&&text(data.description,0,2000),'Naziv: 3–100; opis: do 2000 znakova.');check(CATS.includes(data.category)&&['Novo','Polovno'].includes(data.condition),'Odaberi kategoriju i stanje.');const stock=Number(data.stock);check(integer(stock,0,1000),'Zaliha: 0–1000 komada.');
+ return {title:data.title.trim(),description:data.description.trim(),category:data.category,condition:data.condition,price:cents(data.price),shipping:cents(data.shipping,true),stock};
+}
+function addProduct(s,data){seller(s,data.sellerId);check(s.products.length<MAX_ITEMS,'Demo limit: 200 artikala.');const p={id:uid('product'),sellerId:data.sellerId,...productData(data),approved:false,paused:false,icon:'□'};s.products.push(p);log(s,'Novi oglas čeka odobrenje',p.title);return p;}
+function editProduct(s,id,sellerId,data,t=now()){
+ const p=item(s,id);check(p.sellerId===sellerId,'Artikl pripada drugom demo prodavaču.');const d=productData(data);check(d.stock>=reserved(s,id,t),'Zaliha ne može biti manja od rezervisanih komada.');Object.assign(p,d);p.approved=false;log(s,'Izmijenjen oglas čeka novo odobrenje',p.title);
+}
+function approve(s,id){const p=item(s,id);check(seller(s,p.sellerId).ready,'Prvo simuliraj provjeru prodavača.');p.approved=true;log(s,'Oglas odobren u demou',p.title);}
+function pause(s,id){const p=item(s,id);p.paused=!p.paused;log(s,p.paused?'Oglas pauziran':'Oglas vraćen iz pauze',p.title);}
+function estimate(x){
+ const fields=['gross','rate','feeVat','processingRate','processingFixed','activeFee','ordersPerSeller','payoutRate','payoutFixed','payoutsPerOrder','routingRate','adCost','supportCost','lossReserve','monthlyOrders','monthlyFixed'];
+ for(const k of fields)check(Number.isFinite(x[k])&&x[k]>=0&&x[k]<=10000000,'Provjeri unos računice.');check(x.gross>0&&x.ordersPerSeller>0&&x.monthlyOrders>0&&x.rate<=30,'Pozitivni iznosi i broj narudžbi; provizija do 30%.');
+ const grossFee=x.gross*x.rate/100,netFee=grossFee/(1+x.feeVat/100),feeVat=grossFee-netFee,sellerNet=x.gross-grossFee;
+ const processing=x.gross*x.processingRate/100+x.processingFixed,active=x.activeFee/x.ordersPerSeller,payoutFees=sellerNet*x.payoutRate/100+x.payoutFixed*x.payoutsPerOrder,routing=sellerNet*x.routingRate/100;
+ const contribution=netFee-processing-active-payoutFees-routing-x.adCost-x.supportCost-x.lossReserve;
+ return {grossFee,netFee,feeVat,sellerNet,processing,active,payoutFees,routing,contribution,monthly:contribution*x.monthlyOrders-x.monthlyFixed,breakEven:contribution>0?Math.ceil(x.monthlyFixed/contribution):null};
+}
+// Strict import boundary. Reject unknown keys, prototype-like keys, dangling refs, invalid ledgers.
+function keys(o,required){check(o&&typeof o==='object'&&!Array.isArray(o),'Očekivan je zapis.');check(Object.keys(o).length===required.length&&required.every(k=>Object.hasOwn(o,k)),'Nepoznat ili nepotpun format zapisa.');}
+function array(a,max){check(Array.isArray(a)&&a.length<=max,'Prevelika ili nevažeća lista.');}
+function id(v){check(typeof v==='string'&&/^[a-zA-Z0-9_-]{1,100}$/.test(v),'Nevažeća demo oznaka.');}
+function unique(a,field='id'){check(new Set(a.map(x=>x[field])).size===a.length,'Duplirana oznaka.');}
+function timestamp(v,nullable=false){check((nullable&&v===null)||integer(v,1,8640000000000000),'Nevažeće vrijeme.');}
+function validateState(s){
+ keys(s,['schema','revision','sellers','products','cart','orders','events','audit','rateBps']);check(s.schema===2,'Podržana je samo demo kopija verzije 0.2.');check(integer(s.revision)&&integer(s.rateBps,0,3000),'Nevažeće postavke.');
+ array(s.sellers,50);array(s.products,MAX_ITEMS);array(s.cart,MAX_ITEMS);array(s.orders,MAX_ORDERS);array(s.events,3000);array(s.audit,300);
+ check(s.sellers.length>=1,'Nedostaje demo prodavač.');unique(s.sellers);unique(s.products);unique(s.orders);unique(s.cart,'productId');unique(s.events);
+ for(const se of s.sellers){keys(se,['id','name','kind','ready']);id(se.id);check(text(se.name,3,80)&&KINDS.includes(se.kind)&&typeof se.ready==='boolean','Nevažeći prodavač.');}
+ for(const p of s.products){keys(p,['id','title','sellerId','category','condition','price','stock','icon','shipping','description','approved','paused']);id(p.id);seller(s,p.sellerId);check(text(p.title,3,100)&&text(p.description,0,2000)&&text(p.icon,1,4),'Nevažeći opis artikla.');check(CATS.includes(p.category)&&['Novo','Polovno'].includes(p.condition),'Nevažeća kategorija.');check(integer(p.price,1)&&integer(p.shipping)&&integer(p.stock,0,100000)&&typeof p.approved==='boolean'&&typeof p.paused==='boolean','Nevažeći artikl.');}
+ let sid=null;for(const l of s.cart){keys(l,['productId','qty']);const p=item(s,l.productId);check(integer(l.qty,1,1000),'Nevažeća količina.');if(sid)check(p.sellerId===sid,'Mješovita korpa.');sid=p.sellerId;}
+ for(const o of s.orders){
+  keys(o,['id','sellerId','sellerName','sellerKind','lines','goods','shipping','gross','rateBps','status','createdAt','expiresAt','paidAt','shippedAt','deliveredAt','payoutAt','payout','refunded','recovered','stockRestored','tracking','issue','messages']);id(o.id);seller(s,o.sellerId);
+  check(text(o.sellerName,3,80)&&KINDS.includes(o.sellerKind)&&STAGES.includes(o.status),'Nevažeća narudžba.');
+  array(o.lines,MAX_ITEMS);check(o.lines.length>0,'Narudžba je prazna.');unique(o.lines,'productId');let goods=0;
+  for(const l of o.lines){keys(l,['productId','title','unit','qty']);check(item(s,l.productId).sellerId===o.sellerId,'Artikl i prodavač nisu usklađeni.');check(text(l.title,3,100)&&integer(l.unit,1)&&integer(l.qty,1,1000),'Nevažeća stavka.');goods+=l.unit*l.qty;}
+  for(const k of ['goods','shipping','gross','payout','refunded','recovered'])check(integer(o[k]),'Nevažeći iznos.');check(o.goods===goods&&o.gross===goods+o.shipping&&o.gross>0&&integer(o.rateBps,0,3000),'Neusklađen zbir.');
+  check(o.refunded<=o.gross&&o.recovered<=o.payout&&o.payout<=o.gross-fee(o.gross,o.rateBps),'Neusklađen povrat ili isplata.');
+  timestamp(o.createdAt);timestamp(o.expiresAt);check(o.expiresAt===o.createdAt+900000,'Nevažeća rezervacija.');for(const k of ['paidAt','shippedAt','deliveredAt','payoutAt'])timestamp(o[k],true);
+  const isPaid=o.paidAt!==null;check(isPaid===['UPLACENO','POSLANO','DOSTAVLJENO'].includes(o.status),'Status i uplata se ne podudaraju.');
+  if(!isPaid)check(!o.payout&&!o.refunded&&!o.recovered&&o.payoutAt===null&&o.shippedAt===null&&o.deliveredAt===null&&!o.stockRestored&&o.issue===null,'Neplaćena narudžba ima finansijske promjene.');
+  if(isPaid)check(o.paidAt>=o.createdAt&&o.paidAt<o.expiresAt,'Uplata izvan rezervacije.');
+  check((o.shippedAt!==null)===['POSLANO','DOSTAVLJENO'].includes(o.status),'Status slanja nije usklađen.');check((o.deliveredAt!==null)===(o.status==='DOSTAVLJENO'),'Status dostave nije usklađen.');
+  if(o.shippedAt!==null)check(o.shippedAt>=o.paidAt,'Nevažeći slijed slanja.');if(o.deliveredAt!==null)check(o.deliveredAt>=o.shippedAt,'Nevažeći slijed dostave.');
+  if(o.payoutAt!==null)check(o.status==='DOSTAVLJENO'&&o.payout>0&&o.payoutAt>=o.deliveredAt,'Nevažeća isplata.');else check(o.payout===0&&o.recovered===0,'Isplata bez vremena.');
+  check(typeof o.stockRestored==='boolean'&&(!o.stockRestored||o.refunded===o.gross)&&text(o.tracking,0,80),'Nevažeći povrat robe.');
+  const f=financials(o);check(f.netToSeller>=0&&o.recovered<=Math.max(0,o.payout-f.entitlement),'Povrat prodavača prelazi obavezu u demo modelu.');
+  if(o.issue!==null){keys(o.issue,['open','reason','detail','openedAt','closedAt','resolution']);check(typeof o.issue.open==='boolean'&&REASONS.includes(o.issue.reason)&&text(o.issue.detail,3,1000)&&text(o.issue.resolution,0,500),'Nevažeći predmet.');timestamp(o.issue.openedAt);timestamp(o.issue.closedAt,true);check(o.issue.open?(o.issue.closedAt===null):(o.issue.closedAt!==null),'Nevažeći status predmeta.');}
+  array(o.messages,100);unique(o.messages);for(const m of o.messages){keys(m,['id','role','text','at']);id(m.id);check(['Kupac','Prodavač','Administracija'].includes(m.role)&&text(m.text,1,1000),'Nevažeća poruka.');timestamp(m.at);}
+ }
+ for(const e of s.events){keys(e,['id','type','orderId','amount']);id(e.id);order(s,e.orderId);check(['PAY','FAIL','REFUND','PAYOUT','RECOVERY'].includes(e.type)&&integer(e.amount,1),'Nevažeći događaj.');}
+ for(const o of s.orders){const es=s.events.filter(e=>e.orderId===o.id),sum=t=>es.filter(e=>e.type===t).reduce((a,e)=>a+e.amount,0),n=t=>es.filter(e=>e.type===t).length;
+  check(n('PAY')===(o.paidAt===null?0:1)&&sum('PAY')===(o.paidAt===null?0:o.gross)&&sum('REFUND')===o.refunded&&sum('PAYOUT')===o.payout&&n('PAYOUT')===(o.payoutAt===null?0:1)&&sum('RECOVERY')===o.recovered,'Evidencija se ne podudara s finansijama.');}
+ for(const a of s.audit){keys(a,['at','action','detail']);timestamp(a.at);check(text(a.action,0,100)&&text(a.detail,0,500),'Nevažeći zapis historije.');}
+ return true;
+}
+function backup(s){validateState(s);return JSON.stringify({format:'projekt3-local-demo',version:2,exportedAt:new Date().toISOString(),state:s},null,2);}
+function restore(raw){check(typeof raw==='string'&&raw.length<=2000000,'Kopija je prevelika (najviše 2 MB teksta).');const x=JSON.parse(raw);keys(x,['format','version','exportedAt','state']);check(x.format==='projekt3-local-demo'&&x.version===2&&text(x.exportedAt,1,50),'Ovo nije demo kopija verzije 0.2.');validateState(x.state);return clone(x.state);}
+const api={VERSION,CATS,KINDS,REASONS,STAGES,cents,basisPoints,money,fee,uid,clone,initial,log,seller,item,order,reserved,available,addCart,changeQty,removeCart,cartTotal,checkout,cancel,expire,pay,ship,deliver,dispute,resolve,financials,payout,refund,recover,restockReturn,message,addSeller,setReady,addProduct,editProduct,approve,pause,estimate,validateState,backup,restore};
+if(typeof module!=='undefined'&&module.exports)module.exports=api;else root.MarketDemo=api;
+})(typeof globalThis!=='undefined'?globalThis:this);
+</script><script>'use strict';
+const M=MarketDemo,KEY='projekt3-marketplace-demo-v02';
+let state=M.initial(),tab='shop',activeSeller='firma',search='',category='',kindFilter='',sort='default',toastTimer;
+let lastStored=null,storageOK=true,writeEnabled=true,loadWarning='',editId=null;
+const drafts={},messageDrafts={};
+try{lastStored=localStorage.getItem(KEY);if(lastStored){if(lastStored.length>2000000)throw Error('Prevelika kopija.');const saved=JSON.parse(lastStored);M.validateState(saved);state=saved;}}
+catch(e){loadWarning=e.name==='SecurityError'?'Preglednik ovdje ne dopušta automatsko čuvanje. Demo radi u memoriji; napredak sačuvaj kroz Podaci / pomoć.':'Sačuvani zapis nije učitan jer ne prolazi provjeru formata. Nije obrisan. Demo radi u memoriji; otvori Podaci / pomoć.';storageOK=false;writeEnabled=false;}
+const root=document.getElementById('content');
+const stageText={CEKA_UPLATU:'Čeka demo uplatu',UPLACENO:'Plaćeno · demo',POSLANO:'Poslano · demo',DOSTAVLJENO:'Dostavljeno · demo',OTKAZANO:'Otkazano prije uplate',ISTEKLO:'Istekla rezervacija'};
+function el(tag,text,cls){const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(cls)n.className=cls;return n;}
+function add(p,...nodes){nodes.forEach(n=>p.append(n));return p;}
+function button(text,fn,cls=''){const b=el('button',text,cls);b.type='button';b.onclick=fn;return b;}
+function note(t,warning=false){return el('div',t,warning?'note alert':'note');}
+function hero(title,desc,eyebrow='PROJEKT 3 / LOKALNI TEST 0.2'){
+ const section=el('section',undefined,'hero');add(section,add(el('div'),el('div',eyebrow,'eyebrow'),el('h1',title),el('p',desc,'muted')));return section;
+}
+function panel(title){const p=el('section',undefined,'panel');if(title)p.append(el('h2',title));return p;}
+function empty(t){return el('div',t,'empty');}
+function field(label,id,value,type='text',extra={}){const f=el('label',undefined,'field'),i=el('input');i.id=id;i.type=type;i.value=value;Object.assign(i,extra);add(f,el('span',label),i);return f;}
+function area(label,id,value,max=1000){const f=el('label',undefined,'field full'),i=el('textarea');i.id=id;i.value=value;i.rows=3;i.maxLength=max;add(f,el('span',label),i);return f;}
+function selectField(label,id,options,value){const f=el('label',undefined,'field'),s=el('select');s.id=id;options.forEach(o=>{const opt=el('option',typeof o==='string'?o:o.label);opt.value=typeof o==='string'?o:o.value;s.append(opt);});s.value=value;return add(f,el('span',label),s);}
+function val(id){return document.getElementById(id).value;}
+function kv(p,label,value,cls=''){add(p,el('span',label),el('strong',value,cls));}
+function table(headers,rows){const w=el('div',undefined,'tablewrap'),t=el('table'),h=el('tr');headers.forEach(x=>h.append(el('th',x)));t.append(add(el('thead'),h));const body=el('tbody');rows.forEach(row=>{const tr=el('tr');row.forEach(cell=>{const td=el('td');td.append(cell instanceof Node?cell:document.createTextNode(String(cell)));tr.append(td);});body.append(tr);});t.append(body);w.append(t);return w;}
+function notify(t){const n=document.getElementById('toast');n.textContent=t;n.hidden=false;clearTimeout(toastTimer);toastTimer=setTimeout(()=>n.hidden=true,7000);}
+function storageLabel(){document.getElementById('storage').textContent=storageOK&&writeEnabled?'Lokalno čuvanje aktivno':'Samo memorija — sačuvaj kopiju';document.getElementById('storage').className=storageOK&&writeEnabled?'badge':'badge caution';}
+function run(fn,ok='Promjena sačuvana u lokalnom demou.'){
+ try{
+  if(storageOK&&writeEnabled){const latest=localStorage.getItem(KEY);if(latest!==lastStored)throw Error('Podaci su izmijenjeni u drugom prozoru. U Podaci / pomoć izaberi „Učitaj novije lokalne podatke“.');}
+  const next=M.clone(state);const result=fn(next);next.revision=state.revision+1;M.validateState(next);
+  const raw=JSON.stringify(next);if(raw.length>1000000)throw Error('Demo je dostigao lokalni limit. Izvezi kopiju pa resetuj.');
+  let saved=true;
+  if(storageOK&&writeEnabled){try{localStorage.setItem(KEY,raw);lastStored=raw;}catch(e){storageOK=false;saved=false;}}
+  else saved=false;
+  state=next;render();notify(saved?ok:ok+' Podaci su samo u memoriji — izvezi kopiju.');return {ok:true,result};
+ }catch(e){notify(e.message);return {ok:false};}
+}
+function go(t){tab=t;render();window.scrollTo(0,0);}
+function modal(title,build){
+ const d=document.getElementById('dialog');if(d.open)d.close();d.replaceChildren();
+ const head=el('div',undefined,'row wrap');add(head,el('h2',title),button('Zatvori',()=>d.close()));d.append(head);build(d);d.showModal();
+}
+function askAmount(title,max,fn,warning=''){
+ modal(title,d=>{if(warning)d.append(note(warning,true));const f=el('form');add(f,field('Iznos (€), najviše '+M.money(max),'amount',(max/100).toFixed(2),'text',{required:true,inputMode:'decimal'}),el('p','Sve je lokalna simulacija. Nema bankovne transakcije.','small muted'));
+ const b=el('button','Potvrdi simulaciju','primary');b.type='submit';f.append(b);f.onsubmit=e=>{e.preventDefault();let n;try{n=M.cents(val('amount'));}catch(error){notify(error.message);return;}const r=run(s=>fn(s,n));if(r.ok)d.close();};d.append(f);});
+}
+function render(){
+ if(!state.sellers.some(s=>s.id===activeSeller)){activeSeller=state.sellers[0].id;editId=null;}
+ if(editId&&!state.products.some(p=>p.id===editId&&p.sellerId===activeSeller))editId=null;
+ document.querySelectorAll('[data-tab]').forEach(b=>{b.classList.toggle('active',b.dataset.tab===tab);b.setAttribute('aria-current',b.dataset.tab===tab?'page':'false');});
+ document.getElementById('cartcount').textContent=state.cart.reduce((a,l)=>a+l.qty,0);root.replaceChildren();storageLabel();
+ ({shop,cart,orders,seller:sellerPage,admin,calc:calculator,data:dataPage})[tab]();
+}
+function sellerNotice(kind){return kind==='Firma'?'Firma: kod online kupovine potrošača u EU u pravilu postoji 14 dana za odustanak, uz izuzetke. Ovo je informativni demo, ne kompletan pravni tekst.':'Privatna osoba: EU pravo na 14-dnevni odustanak ne primjenjuje se kao kod kupovine od trgovca. To ne znači da je isključena svaka odgovornost. Prijava problema ostaje dostupna u demou.';}
+function detail(id){const p=M.item(state,id),s=M.seller(state,p.sellerId);modal('Detalji demo artikla',d=>{
+ add(d,el('div',p.icon,'detail-art'),el('div',p.category,'eyebrow'),el('h3',p.title),el('p',p.description,'prewrap'),el('p',s.name+' · '+s.kind),el('p',M.money(p.price)+' + '+M.money(p.shipping)+' dostava','big'),el('p','Slobodno: '+M.available(state,p.id)+' · Rezervisano: '+M.reserved(state,p.id),'small muted'),note(sellerNotice(s.kind)));
+ const b=button('Dodaj u demo korpu',()=>{const r=run(x=>M.addCart(x,p.id),'Artikl je dodan.');if(r.ok)d.close();},'primary');b.disabled=!p.approved||p.paused||!s.ready||M.available(state,id)===0;d.append(b);
+ });}
+function shop(){
+ add(root,hero('Mjesto za firme i privatne prodavače.','Isprobaj prodaju od oglasa do povrata. Svi artikli i prodavači su izmišljeni; nijedan proizvod nije stvarna ponuda.'),note('Bez stvarnih uplata · Radna provizija '+state.rateBps/100+'% · Jedan prodavač po narudžbi.'));
+ const tools=el('div',undefined,'toolbar');const q=el('input');q.type='search';q.placeholder='Pretraži demo artikle';q.value=search;q.setAttribute('aria-label','Pretraži demo artikle');
+ const c=selectField('Kategorija','filter-cat',[{value:'',label:'Sve kategorije'},...M.CATS.map(x=>({value:x,label:x}))],category);
+ const k=selectField('Prodavač','filter-kind',[{value:'',label:'Svi prodavači'},...M.KINDS.map(x=>({value:x,label:x}))],kindFilter);
+ const so=selectField('Poredak','filter-sort',[{value:'default',label:'Preporučeni demo poredak'},{value:'low',label:'Cijena: niža prvo'},{value:'high',label:'Cijena: viša prvo'}],sort);
+ add(tools,add(el('label',undefined,'field search-field'),el('span','Pretraga'),q),c,k,so);root.append(tools);
+ const grid=el('div',undefined,'grid');root.append(grid);
+ function list(){
+  grid.replaceChildren();let ps=state.products.filter(p=>p.approved&&!p.paused&&M.seller(state,p.sellerId).ready&&p.title.toLocaleLowerCase().includes(search.toLocaleLowerCase())&&(!category||p.category===category)&&(!kindFilter||M.seller(state,p.sellerId).kind===kindFilter));
+  if(sort!=='default')ps.sort((a,b)=>sort==='low'?a.price-b.price:b.price-a.price);
+  ps.forEach(p=>{const s=M.seller(state,p.sellerId),n=M.available(state,p.id),card=el('article',undefined,'card'),art=el('div',p.icon,'product-art');art.setAttribute('aria-hidden','true');art.append(el('span',p.condition,'badge'));
+   const body=el('div',undefined,'card-content');add(body,el('div',p.category,'eyebrow'),el('h3',p.title),el('div',s.kind+' · '+s.name,'small muted'),el('div',M.money(p.price),'price'),el('p','Dostava '+M.money(p.shipping)+' · Slobodno '+n,'small muted'));
+   const actions=el('div',undefined,'product-actions'),b=button(n?'Dodaj u korpu':'Nema slobodnih',()=>run(x=>M.addCart(x,p.id),'Dodano u demo korpu.'),'primary');b.disabled=!n;add(actions,b,button('Detalji',()=>detail(p.id)));body.append(actions);add(card,art,body);grid.append(card);
+  });if(!ps.length)grid.append(empty('Nema aktivnih demo artikala za ovaj izbor.'));
+ }
+ q.oninput=()=>{search=q.value;list();};c.querySelector('select').onchange=e=>{category=e.target.value;list();};k.querySelector('select').onchange=e=>{kindFilter=e.target.value;list();};so.querySelector('select').onchange=e=>{sort=e.target.value;list();};list();
+}
+function cart(){
+ root.append(hero('Demo korpa','Dodavanje u korpu ne rezerviše robu. Rezervacija od 15 minuta nastaje tek kreiranjem demo narudžbe.'));
+ if(!state.cart.length){add(root,empty('Korpa je prazna.'),button('Pregledaj artikle',()=>go('shop'),'primary'));return;}
+ const se=M.seller(state,M.item(state,state.cart[0].productId).sellerId),p=panel(se.name);p.append(note(sellerNotice(se.kind)));
+ p.append(table(['Artikl','Količina','Ukupno',''],state.cart.map(l=>{const it=M.item(state,l.productId),buttons=el('div',undefined,'actions');add(buttons,button('−',()=>run(s=>M.changeQty(s,it.id,l.qty-1))),el('span',String(l.qty),'qty'),button('+',()=>run(s=>M.changeQty(s,it.id,l.qty+1))));return [it.title,buttons,M.money(it.price*l.qty),button('Ukloni',()=>run(s=>M.removeCart(s,it.id)),'danger')];})));
+ const t=M.cartTotal(state),tot=el('div',undefined,'totals');kv(tot,'Artikli',M.money(t.goods));kv(tot,'Dostava (najviša pojedinačna, demo pravilo)',M.money(t.shipping));kv(tot,'Ukupno za simulaciju',M.money(t.gross),'big');p.append(tot);
+ add(p,note('Ne unosi karticu, adresu ili lične dokumente. Nema stvarnog ugovora ni naplate.'),button('Kreiraj demo narudžbu',()=>{const r=run(s=>M.checkout(s),'Demo narudžba kreirana i roba rezervisana.');if(r.ok)go('orders');},'primary'),document.createTextNode(' '),button('Isprazni korpu',()=>run(s=>{s.cart=[];})));root.append(p);
+}
+function openIssue(id){modal('Otvori lokalni predmet',d=>{const f=el('form');add(f,selectField('Razlog','issue-reason',M.REASONS,M.REASONS[0]),area('Izmišljeni opis problema','issue-detail','',1000),note('Ne šalje se e-mail. Predmet je vidljiv samo u ovom demou.'));const b=el('button','Otvori demo predmet','primary');b.type='submit';f.append(b);f.onsubmit=e=>{e.preventDefault();const reason=val('issue-reason'),desc=val('issue-detail');const r=run(s=>M.dispute(s,id,reason,desc));if(r.ok)d.close();};d.append(f);});}
+function shippingDialog(id){modal('Simuliraj slanje',d=>{const f=el('form');add(f,field('Izmišljena oznaka pošiljke','tracking','DEMO-PAKET-001','text',{minLength:3,maxLength:80,required:true}),note('Oznaka nije povezana s kurirom.'));const b=el('button','Evidentiraj demo slanje','primary');b.type='submit';f.append(b);f.onsubmit=e=>{e.preventDefault();const tracking=val('tracking');const r=run(s=>M.ship(s,id,tracking));if(r.ok)d.close();};d.append(f);});}
+function closeIssue(id){modal('Zatvori lokalni predmet',d=>{const f=el('form');f.append(area('Razlog zatvaranja','resolution','Demo pregled je završen.',500));const b=el('button','Potvrdi zatvaranje','primary');b.type='submit';f.append(b);f.onsubmit=e=>{e.preventDefault();const value=val('resolution');const r=run(s=>M.resolve(s,id,value));if(r.ok)d.close();};d.append(f);});}
+function historyMessages(o,role){
+ const de=el('details'),su=el('summary','Poruke unutar narudžbe ('+o.messages.length+') — lokalno');de.append(su);
+ o.messages.forEach(m=>add(de,add(el('div',undefined,'message'),el('strong',m.role),el('span',' · '+new Date(m.at).toLocaleString('bs-BA'),'small muted'),el('p',m.text,'prewrap'))));
+ const f=el('form'),id='msg-'+role+'-'+o.id,a=area('Demo poruka — bez stvarnih podataka',id,messageDrafts[id]||'');a.querySelector('textarea').required=true;a.querySelector('textarea').oninput=e=>{messageDrafts[id]=e.target.value;};f.append(a);const b=el('button','Dodaj lokalnu poruku');b.type='submit';f.append(b);f.onsubmit=e=>{e.preventDefault();const msg=val(id);const r=run(s=>M.message(s,o.id,role,msg),'Poruka je sačuvana samo lokalno, nije poslana.');if(r.ok){delete messageDrafts[id];render();}};add(de,note('Promjena demo uloge nije prijava. Sve poruke su dostupne u ovoj datoteci.'),f);return de;
+}
+function orderCard(o,role){
+ const p=el('article',undefined,'order'),head=el('div',undefined,'row wrap'),badges=el('div',undefined,'actions');badges.append(el('span',stageText[o.status],'pill'));
+ if(o.payoutAt!==null)badges.append(el('span','Isplaćeno · demo','badge'));if(o.refunded)badges.append(el('span',o.refunded===o.gross?'Puni povrat · demo':'Djelimični povrat · demo','badge caution'));if(o.issue&&o.issue.open)badges.append(el('span','Otvoren predmet','badge caution'));
+ add(head,el('h3',o.id),badges);add(p,head,el('p',o.lines.map(l=>l.title+' × '+l.qty).join(' · '),'small'),el('p',o.sellerName+' · '+o.sellerKind,'small muted'));
+ const f=M.financials(o),tot=el('div',undefined,'totals');kv(tot,o.paidAt===null?'Planirani iznos':'Prvobitno naplaćeno (demo)',M.money(o.gross));kv(tot,'Vraćeno kupcu (demo)',M.money(o.refunded));
+ if(role!=='buyer'&&o.paidAt!==null){kv(tot,'Preostala bruto naknada platforme',M.money(f.commission));kv(tot,'Pripada prodavaču nakon povrata',M.money(f.entitlement));kv(tot,'Već isplaćeno prodavaču',M.money(o.payout));kv(tot,'Vraćeno od prodavača (simulirano)',M.money(o.recovered));}
+ p.append(tot);
+ if(o.tracking)p.append(el('p','Demo oznaka pošiljke: '+o.tracking,'small'));
+ if(o.status==='CEKA_UPLATU')p.append(el('p','Rezervacija do '+new Date(o.expiresAt).toLocaleTimeString('bs-BA')+' — 15 minuta. Nema automatskog brisanja narudžbe.','small muted'));
+ if(o.issue){const d=el('details');d.open=o.issue.open;add(d,el('summary',(o.issue.open?'Otvoreno: ':'Zatvoreno: ')+o.issue.reason),el('p',o.issue.detail,'prewrap'));if(o.issue.resolution)d.append(el('p','Rješenje: '+o.issue.resolution,'prewrap'));p.append(d);}
+ if(role==='admin'&&o.paidAt!==null){const info=el('div',undefined,'ledger');add(info,el('strong','Finansijski test — nije bankovni saldo'),el('p','Simulirana sredstva preostala platformi: '+M.money(f.cash),'big '+(f.cash<0?'negative':'positive')),el('p','Za naplatiti od prodavača (demo potraživanje): '+M.money(f.receivable),'small'));p.append(info);if(f.receivable>0)p.append(note('Povrat kupcu je evidentiran, ali ovaj iznos još nije vraćen od prodavača. Naplativost nije garantovana. Obračun ne uključuje troškove procesora ni poreze.',true));}
+ const actions=el('div',undefined,'actions');
+ if(role==='buyer'&&o.status==='CEKA_UPLATU'){
+  actions.append(button('Simuliraj uspješnu uplatu',()=>run(s=>M.pay(s,o.id,M.uid('pay'))),'primary'));
+  actions.append(button('Simuliraj odbijenu uplatu',()=>run(s=>M.pay(s,o.id,M.uid('fail'),false),'Odbijena demo uplata.')));
+  actions.append(button('Otkaži bez uplate',()=>run(s=>M.cancel(s,o.id)),'danger'));
+  actions.append(button('Simuliraj istek rezervacije',()=>run(s=>M.expire(s,o.id,o.expiresAt),'Simuliran istek; roba je ponovo slobodna.')));
+ }
+ if(role==='seller'&&o.status==='UPLACENO'&&o.refunded<o.gross){const b=button('Simuliraj slanje',()=>shippingDialog(o.id),'primary');b.disabled=!!(o.issue&&o.issue.open);actions.append(b);}
+ if(role==='buyer'&&o.status==='POSLANO')actions.append(button('Simuliraj dostavu',()=>run(s=>M.deliver(s,o.id)),'primary'));
+ if(role==='buyer'&&o.paidAt!==null&&o.refunded<o.gross&&!(o.issue&&o.issue.open))actions.append(button('Prijavi problem / zatraži povrat',()=>openIssue(o.id)));
+ if(role==='admin'){
+  const payEvent=state.events.find(e=>e.orderId===o.id&&e.type==='PAY');if(payEvent)actions.append(button('Ponovi isti događaj uplate',()=>run(s=>M.pay(s,o.id,payEvent.id),'Duplikat prepoznat; nema druge naplate ni promjene zalihe.')));
+  if(o.paidAt!==null&&o.refunded<o.gross)actions.append(button('Simuliraj povrat kupcu',()=>askAmount('Povrat kupcu — simulacija',o.gross-o.refunded,(s,n)=>M.refund(s,o.id,n,M.uid('refund')),o.payoutAt!==null?'Prodavaču je novac već isplaćen. Ovaj korak ne vraća automatski novac od prodavača; nastaje zasebno demo potraživanje.':'Naknada i pripadajući iznos prodavača bit će proporcionalno umanjeni u ovom demo modelu.'),'danger'));
+  if(f.receivable>0)actions.append(button('Simuliraj povrat od prodavača',()=>askAmount('Naplata od prodavača — simulacija',f.receivable,(s,n)=>M.recover(s,o.id,n,M.uid('recover')),'Nema bankovne naplate. Ovim samo potvrđuješ zamišljeni povrat sredstava u lokalnom modelu.')));
+  if(o.issue&&o.issue.open)actions.append(button('Zatvori demo predmet',()=>closeIssue(o.id)));
+  if(o.paidAt!==null&&o.payoutAt===null){const b=button('Simuliraj isplatu prodavaču',()=>run(s=>M.payout(s,o.id,M.uid('payout'))),'primary');b.disabled=o.status!=='DOSTAVLJENO'||!!(o.issue&&o.issue.open)||f.due<=0||!M.seller(state,o.sellerId).ready;actions.append(b);}
+  if(o.refunded===o.gross&&o.shippedAt!==null&&!o.stockRestored)actions.append(button('Potvrdi prijem vraćene robe',()=>{if(confirm('Simulirati da su SVI artikli vraćeni i pregledani te ih vratiti na zalihu?'))run(s=>M.restockReturn(s,o.id));}));
+ }
+ p.append(actions);if(o.refunded===o.gross)p.append(el('p',o.stockRestored?'Zaliha je vraćena jednom u demo modelu.':'Roba NIJE automatski vraćena na zalihu; potreban je prijem i pregled.','small muted'));
+ p.append(historyMessages(o,role==='buyer'?'Kupac':role==='seller'?'Prodavač':'Administracija'));return p;
+}
+function orders(){add(root,hero('Narudžbe i pisana podrška','Prati demo uplatu, dostavu i povrat — i nakon isplate. Prodavač šalje robu; platforma vodi lokalni testni zapis.'));if(!state.orders.length)root.append(empty('Još nema narudžbi. Počni u katalogu.'));state.orders.forEach(o=>root.append(orderCard(o,'buyer')));}
+function defaultDraft(){return {title:'',description:'',category:M.CATS[0],condition:'Novo',price:'30.00',shipping:'5.00',stock:'1'};}
+function sellerPage(){
+ add(root,hero('Prodavačev radni prostor','Dodaj ili uredi artikle i obradi demo narudžbe. Ovaj izbor uloge nije stvarna prijava ni zaštita pristupa.'));
+ const se=M.seller(state,activeSeller),switcher=selectField('Demo prodavač','active-seller',state.sellers.map(s=>({value:s.id,label:s.name+' · '+s.kind})),activeSeller);root.append(switcher);switcher.querySelector('select').onchange=e=>{activeSeller=e.target.value;editId=null;render();};
+ root.append(note(se.ready?'Demo prodavač je označen kao spreman. To nije stvarna verifikacija identiteta.':'Novi demo prodavač: u Administraciji prvo simuliraj provjeru.',!se.ready));
+ const draftKey=editId||('new-'+activeSeller);if(!drafts[draftKey])drafts[draftKey]=defaultDraft();const d=drafts[draftKey];
+ const p=panel(editId?'Uredi demo artikl':'Dodaj demo artikl'),form=el('form'),fs=el('div',undefined,'fields');add(fs,field('Naziv','product-title',d.title,'text',{required:true,minLength:3,maxLength:100}),selectField('Kategorija','product-category',M.CATS,d.category),field('Cijena (€)','product-price',d.price,'text',{required:true,inputMode:'decimal'}),field('Dostava (€)','product-shipping',d.shipping,'text',{required:true,inputMode:'decimal'}),field('Zaliha','product-stock',d.stock,'number',{required:true,min:0,max:1000,step:1}),selectField('Stanje','product-condition',['Novo','Polovno'],d.condition),area('Izmišljeni opis artikla','product-description',d.description,2000));
+ function readDraft(){const x={};for(const k of ['title','category','price','shipping','stock','condition','description'])x[k]=val('product-'+k);drafts[draftKey]=x;return x;}
+ fs.addEventListener('input',readDraft);fs.addEventListener('change',readDraft);form.append(fs);form.append(note('Svaka izmjena oglasa traži novo demo odobrenje. Ranije narudžbe zadržavaju stare cijene. Bez stvarnih imena, adresa, brendova ili dokumenata.'));
+ const b=el('button',editId?'Sačuvaj izmjene za pregled':'Pošalji demo oglas na pregled','primary');b.type='submit';form.append(b);
+ if(editId){form.append(document.createTextNode(' '));form.append(button('Odustani od uređivanja',()=>{editId=null;render();}));}
+ form.onsubmit=e=>{e.preventDefault();const data={...readDraft(),sellerId:activeSeller},editing=editId;const r=run(s=>editing?M.editProduct(s,editing,activeSeller,data):M.addProduct(s,data));if(r.ok){delete drafts[draftKey];editId=null;render();}};p.append(form);root.append(p);
+ const ps=panel('Tvoji demo artikli');ps.append(table(['Artikl','Slobodno / rezervisano','Status','Radnje'],state.products.filter(p=>p.sellerId===activeSeller).map(p=>{const actions=el('div',undefined,'actions');add(actions,button('Uredi',()=>{editId=p.id;drafts[p.id]={title:p.title,description:p.description,category:p.category,condition:p.condition,price:(p.price/100).toFixed(2),shipping:(p.shipping/100).toFixed(2),stock:String(p.stock)};render();window.scrollTo(0,0);}),button(p.paused?'Nastavi oglas':'Pauziraj',()=>run(s=>M.pause(s,p.id))));return [p.title,M.available(state,p.id)+' / '+M.reserved(state,p.id),p.paused?'Pauziran':p.approved?'Demo odobren':'Čeka pregled',actions];})));root.append(ps);
+ const reg=el('details');reg.append(el('summary','Dodaj novog izmišljenog prodavača'));const f=el('form');add(f,field('Samo izmišljeni naziv','seller-name','','text',{minLength:3,maxLength:80,required:true}),selectField('Vrsta prodavača','seller-kind',M.KINDS,M.KINDS[0]));const sb=el('button','Kreiraj demo prodavača');sb.type='submit';f.append(sb);f.onsubmit=e=>{e.preventDefault();const name=val('seller-name'),kind=val('seller-kind');const r=run(s=>M.addSeller(s,name,kind));if(r.ok){activeSeller=r.result.id;editId=null;render();}};reg.append(f);root.append(reg);
+ root.append(el('h2','Narudžbe ovog prodavača'));const os=state.orders.filter(o=>o.sellerId===activeSeller);if(!os.length)root.append(empty('Nema narudžbi.'));os.forEach(o=>root.append(orderCard(o,'seller')));
+}
+function admin(){
+ add(root,hero('Kontrola prodaje i finansijskog rizika','Naplata, isplata, povrat kupcu i povrat sredstava od prodavača odvojeni su događaji. Nijedan ne predstavlja stvarni novac.'));
+ const paid=state.orders.filter(o=>o.paidAt!==null),stats=el('div',undefined,'stats');[['Simulirano naplaćeno',paid.reduce((a,o)=>a+o.gross,0)],['Simulirano vraćeno kupcima',paid.reduce((a,o)=>a+o.refunded,0)],['Za naplatiti od prodavača (demo)',paid.reduce((a,o)=>a+M.financials(o).receivable,0)]].forEach(([t,n])=>stats.append(add(el('div',undefined,'stat'),el('div',t,'small muted'),el('strong',M.money(n)))));root.append(stats);
+ const f=panel('Probna provizija, bez usvojenog cjenovnika'),row=el('div',undefined,'row wrap');add(row,field('Za nove narudžbe (%)','rate',state.rateBps/100,'text',{inputMode:'decimal'}),button('Primijeni',()=>{const value=val('rate');run(s=>{s.rateBps=M.basisPoints(value);M.log(s,'Nova probna stopa',value+'%');});}));add(f,row,el('p','Stopa važi za obje vrste demo prodavača. Ne mijenja stare narudžbe. Bruto naknada nije čista zarada.','small muted'));root.append(f);
+ const se=panel('Provjera prodavača — simulacija');state.sellers.forEach(s=>{const r=el('div',undefined,'row wrap itemrow');add(r,el('p',s.name+' · '+s.kind),button(s.ready?'Blokiraj demo prodavača':'Simuliraj provjeru prodavača',()=>run(x=>M.setReady(x,s.id,!s.ready)),s.ready?'':'primary'));se.append(r);});se.append(note('Ova sklopka nije zamjena za KYC/KYB, pravnu provjeru ili odobrenje pružaoca plaćanja.'));root.append(se);
+ const pp=panel('Oglasi koji čekaju pregled');const pending=state.products.filter(p=>!p.approved);if(!pending.length)pp.append(el('p','Nema oglasa na čekanju.','muted'));pending.forEach(p=>{const r=el('div',undefined,'row wrap itemrow');const b=button('Odobri demo oglas',()=>run(s=>M.approve(s,p.id)),'primary');b.disabled=!M.seller(state,p.sellerId).ready;add(r,el('p',p.title+' · '+M.money(p.price)),b);pp.append(r);});root.append(pp);
+ root.append(el('h2','Narudžbe, povrati i potraživanja'));if(!state.orders.length)root.append(empty('Nema demo narudžbi.'));state.orders.forEach(o=>root.append(orderCard(o,'admin')));
+ const audit=el('details');audit.append(el('summary','Evidencija lokalnih promjena ('+state.audit.length+')'));const list=el('div',undefined,'audit');state.audit.forEach(a=>list.append(el('p',new Date(a.at).toLocaleString('bs-BA')+' · '+a.action+' · '+a.detail)));audit.append(list);root.append(audit);
+}
+const calcSpec=[['gross','Iznos narudžbe (€)'],['rate','Naknada platforme (%)'],['feeVat','Pretpostavljeni PDV u našoj naknadi (%)'],['processingRate','Obrada plaćanja (%)'],['processingFixed','Obrada — fiksno (€)'],['activeFee','Aktivan prodavač / mjesec (€)'],['ordersPerSeller','Narudžbi po aktivnom prodavaču'],['payoutRate','Isplata (%)'],['payoutFixed','Isplata — fiksno (€)'],['payoutsPerOrder','Broj isplata po narudžbi'],['routingRate','Raspodjela sredstava (%)'],['adCost','Oglasi po narudžbi (€)'],['supportCost','Rad/podrška po narudžbi (€)'],['lossReserve','Rezerva za gubitke po narudžbi (€)'],['monthlyOrders','Narudžbi mjesečno'],['monthlyFixed','Ostali mjesečni troškovi (€)']];
+let calcState={gross:100,rate:10,feeVat:19,processingRate:1.5,processingFixed:.25,activeFee:2,ordersPerSeller:10,payoutRate:.25,payoutFixed:.1,payoutsPerOrder:1,routingRate:.25,adCost:3,supportCost:1,lossReserve:1,monthlyOrders:100,monthlyFixed:100};
+function calculator(){
+ add(root,hero('Promet nije isto što i dobit.','Radna računica je odvojena od demo narudžbi. Mijenjaj pretpostavke i posmatraj trošak svake prodaje.'),note('Brojke nisu ponuda pružaoca plaćanja niti prognoza. Oglasi, podrška i rezerva su sada uključeni kao izmišljene pretpostavke. Poreski status i konačni troškovi nisu potvrđeni.'));
+ const split=el('div',undefined,'two'),left=panel('Podesive pretpostavke'),right=panel('Rezultat'),fs=el('div',undefined,'fields');calcSpec.forEach(([k,l])=>fs.append(field(l,'calc-'+k,calcState[k],'number',{min:0,step:'any'})));left.append(fs);add(split,left,right);root.append(split);
+ function update(){right.replaceChildren(el('h2','Rezultat simulacije'));try{const x={};for(const [k]of calcSpec){const t=val('calc-'+k).trim();if(!t)throw Error('Popuni sva polja računice.');x[k]=Number(t);}const r=M.estimate(x);calcState=x;const t=el('div',undefined,'totals');for(const [l,n]of [['Bruto naknada',r.grossFee],['Naknada bez pretpostavljenog PDV-a',r.netFee],['Obrada plaćanja',r.processing],['Dio mjesečnog troška prodavača',r.active],['Isplata i raspodjela',r.payoutFees+r.routing],['Oglasi + rad + rezerva',x.adCost+x.supportCost+x.lossReserve]])kv(t,l,M.money(Math.round(n*100)));right.append(t);add(right,el('p','Ostaje po narudžbi prije ostalih fiksnih troškova','small muted'),el('div',M.money(Math.round(r.contribution*100)),'big '+(r.contribution>=0?'positive':'negative')),el('p','Mjesečno nakon unesenih fiksnih troškova, prije poreza na dohodak/dobit','small muted'),el('div',M.money(Math.round(r.monthly*100)),'big '+(r.monthly>=0?'positive':'negative')),note(r.breakEven===null?'Ovaj scenario gubi novac po narudžbi ili ne daje doprinos fiksnim troškovima. Više takvih narudžbi ne rješava problem.':'Za pokriće unesenih mjesečnih fiksnih troškova: najmanje '+r.breakEven+' narudžbi uz iste pretpostavke. To nije predviđanje prodaje.'));right.append(el('p','Nisu automatski uključeni svi porezi na troškove, druge kartice, konverzije, dodatne provjere, savjetnici i nepredviđeni gubici.','small muted'));}catch(e){right.append(note(e.message,true));}}
+ fs.addEventListener('input',update);update();
+}
+function download(name,content,type='application/json'){const blob=new Blob([content],{type}),url=URL.createObjectURL(blob),a=el('a');a.href=url;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),5000);}
+function loadLatest(){try{const raw=localStorage.getItem(KEY);if(!raw)throw Error('Nema sačuvanih podataka.');const s=JSON.parse(raw);M.validateState(s);state=s;lastStored=raw;storageOK=true;writeEnabled=true;loadWarning='';if(!s.sellers.some(x=>x.id===activeSeller))activeSeller=s.sellers[0].id;editId=null;render();notify('Noviji podaci su učitani.');}catch(e){notify(e.message);}}
+function dataPage(){
+ add(root,hero('Sačuvaj napredak. Provjeri ograničenja.','HTML ostaje samostalan lokalni demo. Kopija podataka je JSON datoteka i nije produkcijska baza.'),note('Radi u jednom prozoru. Upozorenje na promjenu u drugom prozoru nije zamjena za serversku bazu i istovremene transakcije.',true));if(loadWarning)root.append(note(loadWarning,true));
+ const p=panel('Izvoz i učitavanje testnih podataka');add(p,el('p','Automatsko čuvanje zavisi od preglednika i putanje lokalne datoteke. Kopiju izvezi prije premještanja datoteke, resetovanja ili zatvaranja privatnog prozora.'),button('Izvezi demo kopiju (.json)',()=>{try{download('Projekt_3_DEMO_kopija_v02.json',M.backup(state));notify('Kopija je pripremljena za preuzimanje.');}catch(e){notify(e.message);}},'primary'),document.createTextNode(' '),button('Učitaj novije lokalne podatke',loadLatest));
+ const upload=field('Učitaj kopiju samo iz ove verzije 0.2','backup-file','','file',{accept:'.json,application/json'});upload.querySelector('input').onchange=async e=>{const file=e.target.files[0];if(!file)return;try{if(file.size>2000000)throw Error('Kopija smije imati najviše 2 MB.');const restored=M.restore(await file.text());if(!confirm('Zamijeniti sadašnje DEMO podatke ovom kopijom? Prethodno izvezi kopiju ako ih želiš sačuvati.'))return;const r=run(s=>{Object.keys(s).forEach(k=>delete s[k]);Object.assign(s,restored);});if(r.ok){activeSeller=state.sellers[0].id;editId=null;render();}}catch(error){notify('Kopija nije učitana: '+error.message);}};p.append(upload);p.append(note('Kopija nije šifrovana ni potpisana. Provjera formata ne dokazuje autentičnost; ne unosi stvarne podatke. Verzija 0.1 ostaje netaknuta i ne uvozi se automatski.'));root.append(p);
+ const flow=panel('Kratak test novog toka');[
+ '1. Katalog → tastatura → Korpa → kreiraj narudžbu → simuliraj uplatu.',
+ '2. Prodavač → simuliraj slanje; Narudžbe → simuliraj dostavu.',
+ '3. Administracija → simuliraj isplatu prodavaču.',
+ '4. Narudžbe → prijavi problem; Administracija → vrati kupcu 20 €.',
+ '5. Pogledaj odvojeno demo potraživanje i sredstva preostala platformi.',
+ '6. Tek zasebnom simulacijom povrata od prodavača smanjuješ potraživanje.',
+ '7. Podaci / pomoć → izvezi kopiju. Resetuj pa uvezi tu kopiju za provjeru.'
+ ].forEach(t=>flow.append(el('p',t)));root.append(flow);
+ const scope=panel('Šta NIJE urađeno');[
+ 'Nema stvarnih računa, autentifikacije, serverskih ovlaštenja, sigurne baze ili izolacije korisnika.',
+ 'Nema WordPress/WooCommerce/Dokan instalacije ni veze s postojećim TimeIQ hostingom.',
+ 'Nema API poziva, identifikacije prodavača, uplata, isplata, transfera, webhookova ili bankovnih povrata.',
+ 'Nema kurirske provjere, e-mailova, automatskih obavijesti ili stvarnog sistema podrške.',
+ 'Spor u demou nije kartični chargeback. Potraživanje nije garantovana naplata od prodavača.',
+ 'Finansijski model srazmjerno umanjuje platformsku naknadu pri povratu; to je testno pravilo, ne ugovor.',
+ 'Povrat robe na zalihu nakon slanja podržan je samo za potvrđen puni povrat svih artikala.',
+ 'Pisana prihvatljivost privatnih prodavača, cijene, pravila platforme, porezi i produkcijska sigurnost ostaju otvoreni.'
+ ].forEach(t=>scope.append(el('p',t)));root.append(scope);
+ const projects=panel('Tri odvojena projekta');add(projects,el('p','1 — TimeIQ.eu: postojeći projekt, bez izmjena.'),el('p','2 — B2B posredovanje: odvojena saradnja i provizije.'),el('p','3 — Ovaj marketplace: firme i privatne osobe, više kategorija, radni naziv.'));root.append(projects);
+}
+document.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>go(b.dataset.tab));
+document.getElementById('reset').onclick=()=>{if(!confirm('Obrisati samo podatke demoa 0.2 u ovom pregledniku? Verzija 0.1 i TimeIQ ostaju netaknuti.'))return;try{lastStored=localStorage.getItem(KEY);storageOK=true;writeEnabled=true;}catch(e){storageOK=false;}activeSeller='firma';editId=null;tab='shop';search='';category='';kindFilter='';Object.keys(drafts).forEach(k=>delete drafts[k]);Object.keys(messageDrafts).forEach(k=>delete messageDrafts[k]);loadWarning='';run(s=>{Object.keys(s).forEach(k=>delete s[k]);Object.assign(s,M.initial());},'Resetovan samo demo 0.2.');};
+window.addEventListener('storage',e=>{if(e.key===KEY&&e.newValue!==lastStored)notify('Demo je promijenjen u drugom prozoru. Učitaj novije podatke prije rada.');});
+render();if(loadWarning)notify(loadWarning);
+</script></body></html>

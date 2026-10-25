@@ -1,0 +1,14 @@
+# Never commit credentials, real-user data or local backups
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+node_modules/
+__pycache__/
+*.pyc
+.DS_Store
+playwright-report/
+test-results/
+*backup*.json
+*roundtrip*.json
