@@ -1,0 +1,50 @@
+{
+  "name": "ZADENVO",
+  "official_source": "DPMAregister",
+  "public_search_url": "https://register.dpma.de/DPMAregister/marke/basis",
+  "form_action": "https://register.dpma.de/DPMAregister/marke/basis.kopf.form",
+  "method": "POST",
+  "response_status": 200,
+  "response_received_at_utc": "2026-10-25T19:09:20.270342+00:00",
+  "submitted_field": "marke",
+  "submitted_value": "ZADENVO",
+  "rendered_query": "(marke=\"ZADENVO\")",
+  "selected_database_scopes": [
+    "German national marks",
+    "European Union marks",
+    "International marks"
+  ],
+  "class_restriction": null,
+  "date_restriction": null,
+  "in_force_only": false,
+  "result_count": 0,
+  "official_result_text": "Die Datenbankabfrage lieferte keine Treffer.",
+  "returned_form_confirmation": {
+    "demarke": {
+      "checked": true,
+      "value": ""
+    },
+    "emmarke": {
+      "checked": true,
+      "value": ""
+    },
+    "irmarke": {
+      "checked": true,
+      "value": ""
+    },
+    "marke": {
+      "checked": false,
+      "value": "ZADENVO"
+    },
+    "marke_inkraft_zeigen_chk": {
+      "checked": false,
+      "value": ""
+    }
+  },
+  "limitations": [
+    "This records the named query and selected databases only; it is not a trademark clearance.",
+    "No phonetic/visual/similarity search or unregistered-rights assessment completed.",
+    "Independent current EUIPO and WIPO registry searches not completed. DPMA does not warrant completeness/accuracy of its EU and international data."
+  ],
+  "guidance_url": "https://www.dpma.de/english/trade_marks/trade_mark_search/index.html"
+}

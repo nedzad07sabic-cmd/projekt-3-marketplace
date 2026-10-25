@@ -21,12 +21,12 @@ U preliminarnoj javnoj web-pretrazi nije pronađena prepoznatljiva istoimena fir
 
 ## Granice provjere žiga
 
-- [DPMAregister](https://register.dpma.de/DPMAregister/marke/basis): otvoren formular; nije dobijen rezultat podnesenog upita za naziv.
+- [DPMAregister](https://register.dpma.de/DPMAregister/marke/basis): 25.10.2026. podnesen je normalni formular s upitom `marke=ZADENVO`, bez ograničenja klase, datuma ili samo važećih zapisa. Njemački, evropski i međunarodni skup zapisa bili su uključeni. Odgovor HTTP 200 potvrdio je **0 rezultata za taj upit**. Sanitiziran zapis je `zadenvo.dpma-check-2026-10-25.json`; privatno stanje formulara nije sačuvano u repozitoriju.
 - [TMview](https://www.tmdn.org/tmview/): dostupna je aplikacijska stranica, bez rezultata pretrage u korištenom pristupu.
 - [EUIPO eSearch](https://euipo.europa.eu/eSearch/): pristup je vratio grešku 502.
 - [WIPO Global Brand Database](https://branddb.wipo.int/): CAPTCHA je spriječila dobijanje rezultata.
 
-Ne tvrdi se da ti registri nemaju raniju prijavu ili žig. Prema [smjernicama DPMA](https://www.dpma.de/english/trade_marks/trade_mark_search/index.html), provjera treba obuhvatiti identične i slične ranije znakove te relevantna EU i međunarodna prava. Ta provjera ostaje otvorena.
+Nulti rezultat navedenog DPMA upita nije nezavisna provjera EUIPO/WIPO niti procjena sličnih znakova. DPMA ne jamči potpunost i tačnost svojih evropskih i međunarodnih zapisa. Prema [smjernicama DPMA](https://www.dpma.de/english/trade_marks/trade_mark_search/index.html), provjera treba obuhvatiti identične i slične ranije znakove te relevantna EU i međunarodna prava. Ta provjera ostaje otvorena.
 
 ## Primjena u kodu
 
