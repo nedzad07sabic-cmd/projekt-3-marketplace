@@ -1,38 +1,42 @@
-# Projekt 3 — Marketplace
+# Zadenvo — marketplace u razvoju
 
-Razvojna web-prezentacija marketplacea za firme i privatne osobe. Odvojeno od TimeIQ-a i B2B posredovanja.
+Zadenvo je odabrani radni naziv zasebnog marketplacea za poslovne i privatne prodavače. Ova razvojna grana sadrži vraćeni serverski kod iz ranijeg paketa, uz pripremu baze i radni identitet. **Aplikacija još nije objavljena kao aktivna trgovina.**
 
-## Web-pregled
+## Gdje je stvarna aplikacija
 
-[Otvori testnu stranicu](https://nedzad07sabic-cmd.github.io/projekt-3-marketplace/)
+- `server/app/` — Django aplikacija, korisnički računi, katalog, prodavači, narudžbe, administracija i integracija naplate.
+- `server/app/market/migrations/` — sačuvane migracije baze.
+- `server/deploy/` — konfiguracija PostgreSQL/Docker/HTTPS instalacije.
+- `server/engineering/ZADENVO_VALIDATION.md` — rezultati provjera ove radne verzije i njihova ograničenja.
+- `engineering/brand/ZADENVO.md` — radni identitet i stvarni status provjere naziva/domene.
+- `engineering/SERVER_RELEASE_STATUS.md` — trenutni status integracije.
 
-**Nije aktivna trgovina.** Svi početni artikli i prodavači su izmišljeni. Nema stvarnih korisničkih računa, provjere identiteta, naplate, isplate, dostave ili e-mailova. Prebacivanje između kupca, prodavača i administracije služi samo testiranju interfejsa; nije autentifikacija. Ne unosite stvarne lične ili finansijske podatke.
+Naplata je podrazumijevano isključena. Domena `zadenvo.com` je kandidat; nije kupljena ni konfigurirana. Provjera prava na naziv nije završena.
 
-Testni podaci ostaju u pregledniku posjetioca kada je lokalna pohrana dostupna. Posjetioci ne dijele podatke. Administratorski prikaz mijenja samo lokalnu simulaciju, ne tuđi račun. Reset briše samo lokalni demo.
+## Lokalno pokretanje
 
-## Šta je uključeno
-
-Katalog, pretraga, filteri, detalji artikla, korpa jednog prodavača, rezervacije, simulirane narudžbe, uređivanje i odobravanje oglasa, poruke u predmetu spora, povrati prije i poslije simulirane isplate, evidencija potraživanja i izvoz/uvoz testne kopije. Probna naknada i kalkulator nisu usvojeni cjenovnik ni prognoza zarade.
-
-## Struktura
-
-- `docs/index.html` — izgrađena samostalna web-stranica za GitHub Pages.
-- `source/` — HTML predložak, CSS, programska logika i interfejs.
-- `tests/core.test.js` — lokalni testovi logike.
-
-## Razvoj
+Potpune upute su u [server/README.md](server/README.md). Iz korijena ovog repozitorija:
 
 ```sh
-node tests/core.test.js
-python source/build.py
+cd server/app
+python -m venv .venv
+# Aktiviraj virtualno okruženje prema svom operativnom sistemu.
+pip install -r requirements.txt
+# Postavi DEBUG=1 i SITE_URL=http://localhost:8000 u privatnom app/.env.
+python manage.py migrate
+python manage.py bootstrap
+python manage.py createsuperuser
+python manage.py runserver
 ```
 
-Nema npm zavisnosti ni tajnih ključeva. Nakon izmjene izvora ponovo izgradite i commitujte `docs/index.html`. GitHub Pages objavljuje `main` → `/docs`.
+`bootstrap` ne dodaje lažne kupce, artikle ili recenzije. Za razvoj se može koristiti SQLite; produkcija zahtijeva PostgreSQL. Raniji korak generisanja prve migracije više nije potreban za novu instalaciju: migracije su dio koda.
 
-## Prije stvarne prodaje
+## Historijski prototip
 
-Potreban je zaseban produkcijski hosting/backend, stvarna autentifikacija i kontrola pristupa, baza, odobren pružalac plaćanja za firme i privatne osobe, provjereni webhook događaji, prodavačka verifikacija, sigurnosni pregled i odgovarajuća pravna/poreska priprema. GitHub Pages se ovdje koristi isključivo za prezentaciju prototipa, ne za e-trgovinu.
+`source/`, `tests/core.test.js` i `docs/index.html` čuvaju raniji demonstracijski interfejs s izmišljenim podacima. On nije povezan s novom bazom i ne predstavlja serversku aplikaciju. GitHub Pages koristi `main` → `/docs`; rad u `server-platform-v1` ne objavljuje serversku trgovinu.
 
-GitHub Pages pravila: https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits
+[Postojeći demonstracijski pregled](https://nedzad07sabic-cmd.github.io/projekt-3-marketplace/) ostaje historijski demo. Za server je potreban zaseban hosting. TimeIQ i B2B posredovanje su zasebni projekti.
 
-Kod demonstracije ne pristupa vanjskim API-jima. GitHub kao hosting provajder obrađuje tehničke zahtjeve posjetilaca prema svojim pravilima privatnosti.
+## Prije objave
+
+Vidi [prihvatne kriterije](server/engineering/ACCEPTANCE.md) i [upute za instalaciju](server/engineering/DEPLOYMENT_BS.md). Treba završiti PostgreSQL provjere, stvarne testne tokove procesora plaćanja, e-mail, hosting, sigurnosne kopije i pravnu pripremu. Nisu kupljene nove usluge niti uključena stvarna naplata.

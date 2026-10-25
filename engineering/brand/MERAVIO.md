@@ -1,3 +1,5 @@
+> Historijski kandidat. Korisnik je 25.10.2026. izabrao ZADENVO kao novi radni naziv. Vidi `ZADENVO.md`.
+
 # MERAVIO — radni naziv Projekta 3
 
 Korisnik je izabrao MERAVIO za marketplace za firme i privatne prodavače. TimeIQ i B2B posredovanje ostaju zasebni projekti.

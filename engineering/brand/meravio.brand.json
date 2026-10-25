@@ -1,14 +1,24 @@
 {
   "name": "MERAVIO",
   "display_name": "Meravio",
-  "status": "provisional_pending_domain_and_trademark_clearance",
+  "status": "superseded_by_zadenvo",
   "tagline_bs": "Pronađi svoje.",
   "description_bs": "Marketplace za poslovne i privatne prodavače.",
-  "proposed_palette": {"navy": "#15283E", "teal": "#116C63", "white": "#FFFFFF"},
+  "proposed_palette": {
+    "navy": "#15283E",
+    "teal": "#116C63",
+    "white": "#FFFFFF"
+  },
   "domain": null,
   "support_email": null,
   "repo": "nedzad07sabic-cmd/projekt-3-marketplace",
   "development_branch": "server-platform-v1",
   "public_rebrand_approved": false,
-  "prohibited_claims": ["Registered trademark", "Available .com/.de/.eu domain", "Guaranteed profit", "Invented reviews or sales figures"]
+  "prohibited_claims": [
+    "Registered trademark",
+    "Available .com/.de/.eu domain",
+    "Guaranteed profit",
+    "Invented reviews or sales figures"
+  ],
+  "superseded_by": "ZADENVO"
 }

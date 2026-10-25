@@ -1,0 +1,18 @@
+{
+  "name": "ZADENVO",
+  "display_name": "Zadenvo",
+  "status": "selected_working_brand_pending_clearance",
+  "selected_on": "2026-10-25",
+  "pronunciation_bs": "za-den-vo",
+  "tagline_bs": "Pronađi svoje.",
+  "description_bs": "Marketplace za poslovne i privatne prodavače.",
+  "palette": {"navy": "#15283E", "teal": "#116C63", "white": "#FFFFFF"},
+  "domain_candidate": "zadenvo.com",
+  "registered_domain": null,
+  "support_email": null,
+  "trademark_clearance_confirmed": false,
+  "public_launch_approved": false,
+  "repo": "nedzad07sabic-cmd/projekt-3-marketplace",
+  "development_branch": "server-platform-v1",
+  "server_path": "server/app"
+}

@@ -1,0 +1,54 @@
+services:
+  db:
+    image: postgres:17
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: marketplace
+      POSTGRES_USER: marketplace
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD privately}
+    volumes:
+      - database:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U marketplace -d marketplace"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+  web:
+    build: ../app
+    restart: unless-stopped
+    env_file: ../app/.env
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - media:/data/media
+    expose: ["8000"]
+    security_opt: ["no-new-privileges:true"]
+  jobs:
+    build: ../app
+    command: ["python", "manage.py", "process_jobs", "--loop"]
+    restart: unless-stopped
+    env_file: ../app/.env
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - media:/data/media
+    security_opt: ["no-new-privileges:true"]
+  proxy:
+    image: caddy:2
+    restart: unless-stopped
+    environment:
+      MARKET_DOMAIN: ${MARKET_DOMAIN:?Set the new marketplace domain}
+    ports: ["80:80", "443:443"]
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+      - media:/srv/media:ro
+    depends_on: [web]
+volumes:
+  database:
+  media:
+  caddy_data:
+  caddy_config:

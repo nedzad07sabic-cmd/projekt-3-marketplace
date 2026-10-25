@@ -1,0 +1,34 @@
+# Copy to .github/workflows/marketplace-tests.yml after repository workflow permission is approved.
+name: Marketplace server tests
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:17
+        defaults:
+      run:
+        working-directory: server/app
+    env:
+          POSTGRES_DB: marketplace
+          POSTGRES_USER: marketplace
+          POSTGRES_PASSWORD: unit-test-password
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd "pg_isready -U marketplace"
+          --health-interval 10s --health-timeout 5s --health-retries 10
+    env:
+      TESTING: '1'
+      DEBUG: '0'
+      DATABASE_URL: postgresql://marketplace:unit-test-password@127.0.0.1:5432/marketplace
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - run: pip install -r requirements.txt
+      - run: python manage.py makemigrations --check --dry-run
+      - run: python manage.py test market.tests --verbosity 2

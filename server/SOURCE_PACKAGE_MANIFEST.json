@@ -1,0 +1,314 @@
+{
+  "README.md": {
+    "bytes": 3478,
+    "sha256": "e29753fe6711ac77e59b16adc755ab2cdec8beafa4339489254dc450de476489"
+  },
+  "app/.dockerignore": {
+    "bytes": 83,
+    "sha256": "a11408f8acd086956b8f1c8a47c10cf9aeb69882037e83a18b4788f4d0246899"
+  },
+  "app/.env.example": {
+    "bytes": 774,
+    "sha256": "9a905554ff93ec4658a50c57f80dcc7a8077470da1f6e93f7f7fc13c8a8ca348"
+  },
+  "app/.gitignore": {
+    "bytes": 104,
+    "sha256": "32106b799a6dfcee993371ca03dea345dc5a454a56fa2f91e236b31edfbfcfcb"
+  },
+  "app/Dockerfile": {
+    "bytes": 646,
+    "sha256": "2fc9a54c0d66c46ee4f64afd60fd3334a277e17464bc919d475ccc028863bba2"
+  },
+  "app/config/__init__.py": {
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "app/config/settings.py": {
+    "bytes": 5849,
+    "sha256": "4828749508f07bd4cf7e7f4ed899931ed7c72d9879f57d7b03cb191d5229de78"
+  },
+  "app/config/urls.py": {
+    "bytes": 3856,
+    "sha256": "700c5ec3726d03b1dfc09457af6a0b87c288ec24cfe4f9a4fd5adea600b72413"
+  },
+  "app/config/wsgi.py": {
+    "bytes": 164,
+    "sha256": "c9ac55f04e948c72ea52505763b80222a16f65b689b31d32259184166e731908"
+  },
+  "app/manage.py": {
+    "bytes": 240,
+    "sha256": "766fa1b89da7e360b649058ca7751f03b4bc8442c9ebeea65fb005c652e7f474"
+  },
+  "app/market/__init__.py": {
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "app/market/admin.py": {
+    "bytes": 2566,
+    "sha256": "e5d25336f71626826944f7af18fedb68bc5c3b649c349f56b03b9ca83e33b48e"
+  },
+  "app/market/apps.py": {
+    "bytes": 138,
+    "sha256": "132ff4713b46a72b4c459454555c58817be1b65a67508d7bf35d6e497bb9aa29"
+  },
+  "app/market/context.py": {
+    "bytes": 522,
+    "sha256": "7ba2d8eb22e55f24d71818798ebd1e155ce4b9613f4c88786413d3cabcc0b018"
+  },
+  "app/market/forms.py": {
+    "bytes": 5650,
+    "sha256": "59b7aa9649236fd334cef48cecdd6f2a6f48498443418de81ac60bec8d11b049"
+  },
+  "app/market/images.py": {
+    "bytes": 1419,
+    "sha256": "d6cfc9bcfdb85424ff371d76a7f6a91f051c4c2b38a5c6588159cbec68627722"
+  },
+  "app/market/management/__init__.py": {
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "app/market/management/commands/__init__.py": {
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "app/market/management/commands/bootstrap.py": {
+    "bytes": 782,
+    "sha256": "14c94a703ecda0119741681e9de77392cd37cbec719c7506fbb296b82847cfba"
+  },
+  "app/market/management/commands/enroll_admin.py": {
+    "bytes": 1020,
+    "sha256": "7354aea36dd5b0de75bac26b6fc125c102b8d2b338b7644038ae94b03fdfe9e0"
+  },
+  "app/market/management/commands/export_ledger.py": {
+    "bytes": 907,
+    "sha256": "3f1f196bfc55604682b5e2b808f55ccb84e045ac6554d8f0095380e86d6ba2d5"
+  },
+  "app/market/management/commands/process_jobs.py": {
+    "bytes": 2662,
+    "sha256": "fe4b320156d04bf796240ef888432596a94ec2c0f01ea029661b6760441ee05c"
+  },
+  "app/market/management/commands/readiness.py": {
+    "bytes": 2314,
+    "sha256": "33fe6b25a921c9d99c3d5af7066faabbc8bbb0ee850d89ebf89639f62ce41816"
+  },
+  "app/market/middleware.py": {
+    "bytes": 2865,
+    "sha256": "625051bf934312cc917707c6ec181027a70d7e8fdf4758d9b06966bc41b68351"
+  },
+  "app/market/migrations/__init__.py": {
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "app/market/models.py": {
+    "bytes": 14187,
+    "sha256": "96b0f06635b530444cf0f597041d53e6248897b83728311a51ca201dab23a320"
+  },
+  "app/market/payments.py": {
+    "bytes": 18602,
+    "sha256": "1d4db3fc842fa502886bdfb64d5506dd7c0b55296873a1dd6f9057e9da565797"
+  },
+  "app/market/services.py": {
+    "bytes": 13220,
+    "sha256": "6a3d0e2a8be87e37eca936414a39378ae356351c85566357ded815e42ddb5018"
+  },
+  "app/market/templatetags/__init__.py": {
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "app/market/templatetags/market_tags.py": {
+    "bytes": 183,
+    "sha256": "875bb40fa39a7452f333be5843e14ceeebc9f0c2e42deb654d1d752f44c4b764"
+  },
+  "app/market/tests/__init__.py": {
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "app/market/tests/test_marketplace.py": {
+    "bytes": 31363,
+    "sha256": "0a37ac635a6fe7b91528496aed634a04fa8daf3945a1f22b5d34db8583a38406"
+  },
+  "app/market/views.py": {
+    "bytes": 22203,
+    "sha256": "a1e3ca6b11714c65b17560bf9225d2e28ae53b7b670ef9a9c8148b28cf33e0b7"
+  },
+  "app/requirements.txt": {
+    "bytes": 166,
+    "sha256": "7396556a4f0720aaedf9c8d5d766b1ebfce5b5b3115c8fdc95e1f614fac0e2fe"
+  },
+  "app/static/favicon.svg": {
+    "bytes": 228,
+    "sha256": "ce5acb61c23492d1248a06a12f095f68950b251aeec96d6bc561e7699f96f407"
+  },
+  "app/static/market.css": {
+    "bytes": 19508,
+    "sha256": "c074fb080630f3ae3332f1741b99ae5973c33bd6f3cad01b3b6c9facad30bdbf"
+  },
+  "app/templates/400.html": {
+    "bytes": 248,
+    "sha256": "7a97148e03571412ac24dd66b1a4fd2f16f6215f47fdfa670e397a36ad7c591b"
+  },
+  "app/templates/403.html": {
+    "bytes": 258,
+    "sha256": "854a2aee33c1c64bbdc1ce623fd9664e3e6e9479bbc74a9cfcba369a83a19439"
+  },
+  "app/templates/404.html": {
+    "bytes": 255,
+    "sha256": "6bc3726e690be4821afed4b3bb3bc2aefa0402229e5e2ef1c8684d9e330cc61a"
+  },
+  "app/templates/500.html": {
+    "bytes": 272,
+    "sha256": "fcdf97fc9c9a3ed1ea94167acf2c3e0dbdb3da05ea35dff93eb253fb8c00b586"
+  },
+  "app/templates/base.html": {
+    "bytes": 3348,
+    "sha256": "c1410805fea3562fe74d43cdf80ecfb2ce4eb83b5c3a030f497896a4dbbd1fe5"
+  },
+  "app/templates/market/account.html": {
+    "bytes": 1468,
+    "sha256": "4f203bef6ebaf1e2f0025261bb448d41e6af8ede908c6a33cd1722dd34a4cd4c"
+  },
+  "app/templates/market/card.html": {
+    "bytes": 1082,
+    "sha256": "6fb2fe93cebf0ece83cf0ee376d42e8ea2b338eda23b8c0156048b774eb33a6a"
+  },
+  "app/templates/market/cart.html": {
+    "bytes": 2926,
+    "sha256": "3e0153b74e53dc1dcdb2b8ad31f4bcd7e83b86799aa3c7f5235da41b111d43e0"
+  },
+  "app/templates/market/case.html": {
+    "bytes": 726,
+    "sha256": "abe44790af9ff2acca98fb8190463c123bbf60ba7eb74c8e04eead512727f80f"
+  },
+  "app/templates/market/catalog.html": {
+    "bytes": 4261,
+    "sha256": "09513c4899be8e3cf2d8fb7098cf808d259fdb0af93d886ff132033cdcab2485"
+  },
+  "app/templates/market/form.html": {
+    "bytes": 403,
+    "sha256": "9506b3654d9f10c2a004dbeec926d7d2da0e1cfbf69958e666deb932c1140bfb"
+  },
+  "app/templates/market/legal.html": {
+    "bytes": 221,
+    "sha256": "3d818c6cf586aa6b137f974f9add09ac1947896097404352a088e94ce411a2a0"
+  },
+  "app/templates/market/notice.html": {
+    "bytes": 191,
+    "sha256": "6b33f4df0077aca83267b43e44f77a2d49a30c3deff5992b24c15a3b6231fec7"
+  },
+  "app/templates/market/ops.html": {
+    "bytes": 3714,
+    "sha256": "2d8b915f8e99d8308371ea4dd8f64bd29ce68310ace4ac2e65575bfe7b7f5f46"
+  },
+  "app/templates/market/order.html": {
+    "bytes": 2956,
+    "sha256": "c6cb66ad31a922e51c50828cfe5a96efdaff38dc6a5064979be9bd2159ad3fe6"
+  },
+  "app/templates/market/orders.html": {
+    "bytes": 524,
+    "sha256": "297e803098c56f892522b7ab4506b1745171e56c08dac00f0965436190e8bbdd"
+  },
+  "app/templates/market/product.html": {
+    "bytes": 3358,
+    "sha256": "b8df2fd2551bd7c368047ede9fd947fb2e659c6636e395e6584430e24c43503e"
+  },
+  "app/templates/market/seller_dashboard.html": {
+    "bytes": 2161,
+    "sha256": "1c67d13b19c82f1f9ff53607cdf47bc7f15e7ada670a217feb2cd0542589f92f"
+  },
+  "app/templates/market/seller_order.html": {
+    "bytes": 1784,
+    "sha256": "e8832b683f6cad082c8fa3b54ae8906a6688fbe0ff9fe8f4cfbeae8bf1f8fb01"
+  },
+  "app/templates/market/seller_profile.html": {
+    "bytes": 672,
+    "sha256": "e7c7ef5413f4b22c50973d16b1c49cc714a487190ed476f17c1dede26420631c"
+  },
+  "app/templates/market/verify.html": {
+    "bytes": 302,
+    "sha256": "11dfe089f3a51c3ceaa9aa59f9231aa12632c201ce481dc1908840e09bde11c5"
+  },
+  "app/templates/market/wishlist.html": {
+    "bytes": 417,
+    "sha256": "b3c3215eaa3632a6c6e73bfff710081364944f8a848e1b3e3ffab4eb17677aae"
+  },
+  "app/templates/registration/login.html": {
+    "bytes": 472,
+    "sha256": "14373af6d67926104b7cb7c0aa0a5490e150edc2d59c899bf3e18e54261630d8"
+  },
+  "app/templates/registration/password_reset_complete.html": {
+    "bytes": 198,
+    "sha256": "bd3214ef045915c1d31580b42f0412976adae501c27025840ab861c0aa0e815e"
+  },
+  "app/templates/registration/password_reset_confirm.html": {
+    "bytes": 383,
+    "sha256": "cd0d933dc2d19b839a6c1666f02d5bcec355e75e504b6875ad420938c07b1e49"
+  },
+  "app/templates/registration/password_reset_done.html": {
+    "bytes": 231,
+    "sha256": "1cf476c7ad63ec0f2d87e9f7ac97eed884f1f0fdfcc8ab24e93a2d366d96f9dd"
+  },
+  "app/templates/registration/password_reset_email.txt": {
+    "bytes": 186,
+    "sha256": "0b944bb17d6cbb6866fc353dee2213c3a5f43f4559c36fc1c3277c0f8f158753"
+  },
+  "app/templates/registration/password_reset_form.html": {
+    "bytes": 267,
+    "sha256": "0b44e3459d6154229a2d06bc6b4f0ec2abb68477bedb53829a7248e3d9376267"
+  },
+  "app/templates/registration/password_reset_subject.txt": {
+    "bytes": 25,
+    "sha256": "7805161df21d713e1d9df25d4d1fd6b6b1dd62728a310cf50fc2241b8a5bc4a4"
+  },
+  "ci/marketplace-tests.yml.example": {
+    "bytes": 1037,
+    "sha256": "b99a0e7bc8be5af2dbfaf8d5ccbc0e11772b4baf2e0dc0e1c80d7e8091a5c4d6"
+  },
+  "deploy/.env.example": {
+    "bytes": 99,
+    "sha256": "2e2ffa6f53e82d39e368b9ed246c6b196f7a130490c10cabea8d1327eb93fc76"
+  },
+  "deploy/Caddyfile": {
+    "bytes": 474,
+    "sha256": "2e03683f651742eb4722aebcd6977e8262be9b1ae635c9690b2fe8cb1de8258a"
+  },
+  "deploy/backup.sh": {
+    "bytes": 482,
+    "sha256": "3deb19de97ae497840d9fada8a39d43d7605006dda5845fcb474eeb88f9215df"
+  },
+  "deploy/compose.yml": {
+    "bytes": 1354,
+    "sha256": "f8f9b5ba2e93950e4c49dc7d77a8df66e51ddad6548560c7bde18a0ca0904137"
+  },
+  "docs/index.html": {
+    "bytes": 1264,
+    "sha256": "8778a3c7f47b26324cfe961a78bb76f8db1f14eefba2608e8ac4bdeba31d6e0f"
+  },
+  "engineering/ACCEPTANCE.md": {
+    "bytes": 2119,
+    "sha256": "3811b5631ec5e9ccb7ee1aba97629771c9b44a91335deee1f385fd5871f9cb80"
+  },
+  "engineering/DEPLOYMENT_BS.md": {
+    "bytes": 5196,
+    "sha256": "30e4c2f725c7f3df76f3b32c29c869158fd0292238d621a9373484edb352e3bd"
+  },
+  "engineering/RESEARCH.md": {
+    "bytes": 2503,
+    "sha256": "a082a8fb54fbebc7e126e99f4a0e732fac888fbf8ae1471b4ae0cc66fa101069"
+  },
+  "engineering/STATUS.md": {
+    "bytes": 2217,
+    "sha256": "670d65b295592adb93fbfbccace1296da15470e91d087f60c258d4d728aa68f8"
+  },
+  "engineering/TEST_REPORT.md": {
+    "bytes": 2332,
+    "sha256": "41c38e6dbdb05e4d0d6ad9e93e8a5d805dcd9dd8a0d985623aefc7763dfccc4c"
+  },
+  "engineering/browser_acceptance.py": {
+    "bytes": 8106,
+    "sha256": "c4660e15147842ac26e297cf3b021e8aa88ba222dd3b4c8d63909d313835c189"
+  },
+  "tools/prepare_initial_schema.py": {
+    "bytes": 972,
+    "sha256": "cc6e36090cd9c5dc53db0965af45c44a6083effd217302b10d2d41e7291822da"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "checked_at_utc": "2026-10-25T18:58:36.361788+00:00",
+  "domain": "zadenvo.com",
+  "source": "https://rdap.verisign.com/com/v1/domain/zadenvo.com",
+  "http_status": 404,
+  "response_body": "",
+  "interpretation": "No registration record returned by the registry lookup at this time.",
+  "registrar_purchase_confirmed": false,
+  "domain_registered_in_this_task": false,
+  "trademark_clearance_confirmed": false
+}
