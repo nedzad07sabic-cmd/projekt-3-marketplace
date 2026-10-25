@@ -1,0 +1,12 @@
+{
+  "checked_date": "2026-10-25",
+  "purpose": "Preliminary naming and domain checks, not trademark clearance or proof of registrant identity.",
+  "domains": [
+    {"domain": "meravio.com", "source": "https://rdap.verisign.com/com/v1/domain/meravio.com", "checked_utc": "2026-10-25T18:18:59.114076+00:00", "http_status": 200, "objectClassName": "domain", "ldhName": "MERAVIO.COM", "status": ["client transfer prohibited"], "registration": "2026-02-24T21:42:54Z", "expiration": "2027-02-24T21:42:54Z", "finding": "Existing registration; ownership and possible sale were not assessed."},
+    {"domain": "meravio.de", "source": "https://rdap.denic.de/domain/meravio.de", "checked_utc": "2026-10-25T18:18:59.856349+00:00", "http_status": 200, "objectClassName": "domain", "ldhName": "meravio.de", "status": ["active"], "last_changed": "2021-05-03T20:15:12+02:00", "finding": "Active domain registration; ownership and possible sale were not assessed."},
+    {"domain": "meravio.eu", "source": "https://whois.eurid.eu/en/search/?domain=meravio.eu", "finding": "Unconfirmed: no reliable registry result was retrieved."}
+  ],
+  "trademark_status": "Not cleared. DPMAregister submission returned the form, not an interpretable result set. EUIPO page access was denied. Web search is not a substitute.",
+  "guidance_source": "https://www.dpma.de/english/trade_marks/trade_mark_search/index.html",
+  "actions": "No purchases, registrations, messages, DNS changes, public website rebranding or launch."
+}
