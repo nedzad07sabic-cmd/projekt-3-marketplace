@@ -24,9 +24,15 @@ services:
       - media:/data/media
     expose: ["8000"]
     security_opt: ["no-new-privileges:true"]
+    healthcheck:
+      test: ["CMD", "python", "/app/healthcheck.py"]
+      interval: 30s
+      timeout: 5s
+      start_period: 30s
+      retries: 3
   jobs:
     build: ../app
-    command: ["python", "manage.py", "process_jobs", "--loop"]
+    command: ["sh", "/app/start-service.sh", "jobs"]
     restart: unless-stopped
     env_file: ../app/.env
     depends_on:
@@ -46,7 +52,9 @@ services:
       - caddy_data:/data
       - caddy_config:/config
       - media:/srv/media:ro
-    depends_on: [web]
+    depends_on:
+      web:
+        condition: service_healthy
 volumes:
   database:
   media:
